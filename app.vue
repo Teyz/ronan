@@ -1,5 +1,7 @@
 <template>
   <NuxtLayout name="coming">
-    <ComingSoon />
+    <div id="app">
+      <ComingSoon />
+    </div>
   </NuxtLayout>
 </template>
