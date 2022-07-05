@@ -11,6 +11,7 @@
       <div class="comingAnimationContainer">
         <video width="700" loop autoplay muted>
           <source src="@/assets/img/anim.webm" type="video/webm" />
+          <source src="@/assets/img/anim.mp4" type="video/mp4" />
           Sorry, your browser doesn't support embedded videos.
         </video>
       </div>
