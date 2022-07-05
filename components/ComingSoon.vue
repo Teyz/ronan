@@ -46,6 +46,10 @@ export default {
     min-height: 700px;
   }
 
+  .logo {
+    width: 200px;
+  }
+
   .logo,
   .comingSoonAnimation {
     margin: 0 auto;
