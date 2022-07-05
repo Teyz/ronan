@@ -9,9 +9,17 @@
     </div>
     <div class="comingAnimation">
       <div class="comingAnimationContainer">
-        <video autoplay loop muted playsinline width="700">
-          <source :src="`@/assets/img/anim.mov`" />
+        <video
+          autoplay
+          loop
+          muted
+          playsinline
+          width="700"
+          v-if="!isDeviceMobile"
+        >
+          <source src="@/assets/img/anim.webm" type="video/webm" />
         </video>
+        <img src="@/assets/img/anim.gif" alt="" v-else />
       </div>
       <p class="comingSoon">coming soon...</p>
     </div>
@@ -26,9 +34,23 @@
 </template>
 
 <script>
+import { onMounted } from "vue";
+import { isMobile } from "~/utils";
+
 export default {
   name: "ComingSoon",
   layout: "coming",
+  setup() {
+    const isDeviceMobile = ref(true);
+
+    onMounted(() => {
+      if (!isMobile()) {
+        isDeviceMobile.value = false;
+      }
+    });
+
+    return { isDeviceMobile };
+  },
 };
 </script>
 
