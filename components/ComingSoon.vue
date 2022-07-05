@@ -9,11 +9,7 @@
     </div>
     <div class="comingAnimation">
       <div class="comingAnimationContainer">
-        <video width="700" loop autoplay muted playsinline>
-          <source src="@/assets/img/anim.webm" type="video/webm" />
-          <source src="@/assets/img/anim.mov" type="video/mp4" />
-          Sorry, your browser doesn't support embedded videos.
-        </video>
+        <img src="@/assets/img/anim.gif" alt="" />
       </div>
       <p class="comingSoon">coming soon...</p>
     </div>
@@ -67,6 +63,20 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include above(small) {
+      max-width: 900px;
+      overflow: visible;
+    }
+
+    img {
+      object-fit: cover;
+      width: 700px;
+
+      @include above(small) {
+        width: 900px;
+      }
+    }
   }
 
   p {
@@ -86,8 +96,6 @@ export default {
   }
 
   .comingAnimation {
-    max-width: 350px;
-    overflow: hidden;
     margin: 128px 0 104px 0;
 
     @include above(small) {
