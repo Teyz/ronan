@@ -80,7 +80,6 @@ export default {
   }
 
   .contactRoot {
-    margin-top: 96px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
