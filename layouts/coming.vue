@@ -14,9 +14,13 @@
   background-size: cover;
   width: 100%;
   height: 100vh;
-  min-height: 700px;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @include above(small) {
+    min-height: 700px;
+  }
 }
 </style>
