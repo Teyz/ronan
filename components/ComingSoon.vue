@@ -38,7 +38,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 90vh;
+  height: 80vh;
   min-height: 300px;
 
   @include above(small) {
@@ -61,9 +61,14 @@ export default {
     object-fit: cover;
   }
 
+  .comingAnimation {
+    overflow: hidden;
+    max-width: 325px;
+  }
+
   .comingSoonAnimation {
     margin-top: 96px;
-    width: 325px;
+    width: 500px;
 
     @include above(small) {
       width: 500px;
