@@ -68,7 +68,10 @@ export default defineNuxtConfig({
           name: "format-detection",
           content: "telephone=no",
         },
-        { property: "og:image", content: "/static/ronan.png" },
+        {
+          property: "og:image",
+          content: "http://localhost:3000/static/ronan.png",
+        },
         {
           hid: "og:url",
           property: "og:url",
@@ -91,7 +94,11 @@ export default defineNuxtConfig({
           content:
             "Ronan by Clinet is a new Bordeaux wine that balanced seduction with precision, produce by Château Clinet, an historic Grand Cru, in partnership with conscientious growers.",
         },
-        { hid: "t-type", name: "twitter:image", content: "/static/ronan.png" },
+        {
+          hid: "t-type",
+          name: "twitter:image",
+          content: "http://localhost:3000/static/ronan.png",
+        },
       ],
       link: [
         { rel: "icon", type: "image/x-icon", href: "/static/favicon.ico" },
