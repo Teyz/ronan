@@ -1,12 +1,20 @@
 <template>
   <section class="comingSoonRoot">
-    <img src="@/assets/img/logo.svg" alt="Logo Ronan By Clinet" class="logo" />
-    <img
-      src="@/assets/img/coming.svg"
-      alt="Animation Coming Soon Ronan By Clinet"
-      class="comingSoonAnimation"
-    />
-    <p class="comingSoon">coming soon...</p>
+    <div class="comingTop">
+      <img
+        src="@/assets/img/logo.svg"
+        alt="Logo Ronan By Clinet"
+        class="logo"
+      />
+    </div>
+    <div class="comingAnimation">
+      <img
+        src="@/assets/img/coming.svg"
+        alt="Animation Coming Soon Ronan By Clinet"
+        class="comingSoonAnimation"
+      />
+      <p class="comingSoon">coming soon...</p>
+    </div>
     <div class="contactRoot">
       <h2>contact</h2>
       <p>
@@ -29,6 +37,11 @@ export default {
   position: relative;
   background-color: $primary;
   padding: 88px 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 
   .logo,
   .comingSoonAnimation {

@@ -11,13 +11,11 @@
 }
 .background {
   position: absolute;
-  top: 0;
-  left: 0;
-  background-image: url("@/assets/img/texture.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
   z-index: -1;
+  background: url("@/assets/img/texture.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 </style>
