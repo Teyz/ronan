@@ -64,7 +64,7 @@ export default {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 56px 0;
+  padding: 72px 0;
   overflow-x: hidden;
 
   @include above(small) {
