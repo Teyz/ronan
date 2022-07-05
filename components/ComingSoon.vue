@@ -39,6 +39,12 @@ export default {
   flex-direction: column;
   justify-content: center;
   height: 95vh;
+  min-height: 300px;
+
+  @include above(small) {
+    height: 100vh;
+    min-height: 700px;
+  }
 
   .logo,
   .comingSoonAnimation {
