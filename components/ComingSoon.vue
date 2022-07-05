@@ -35,22 +35,25 @@ export default {
 <style lang="scss" scoped>
 .comingSoonRoot {
   position: relative;
-  background-color: $primary;
-  padding: 88px 0;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
 
   .logo,
   .comingSoonAnimation {
     margin: 0 auto;
     display: block;
+    object-fit: cover;
   }
 
   .comingSoonAnimation {
     margin-top: 96px;
+    width: 250px;
+
+    @include above(small) {
+      width: 500px;
+    }
+
+    @include above(medium) {
+      width: 900px;
+    }
   }
 
   p {

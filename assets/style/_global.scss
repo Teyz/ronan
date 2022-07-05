@@ -1,8 +1,5 @@
 @import "./fonts.scss";
-
+@import "./variables.scss";
 body {
-  background-color: #fcfafa;
+  background-color: $primary;
 }
-
-$primary: #fcfafa;
-$secondary: #b71616;
