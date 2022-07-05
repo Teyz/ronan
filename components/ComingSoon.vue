@@ -37,8 +37,8 @@ export default {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: 100vh;
+  justify-content: center;
+  height: 95vh;
 
   .logo,
   .comingSoonAnimation {
