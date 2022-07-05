@@ -38,7 +38,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 95vh;
+  height: 90vh;
   min-height: 300px;
 
   @include above(small) {
