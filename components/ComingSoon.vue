@@ -9,17 +9,7 @@
     </div>
     <div class="comingAnimation">
       <div class="comingAnimationContainer">
-        <video
-          autoplay
-          loop
-          muted
-          playsinline
-          width="700"
-          v-if="!isDeviceMobile"
-        >
-          <source src="@/assets/img/anim.webm" type="video/webm" />
-        </video>
-        <img src="@/assets/img/anim.gif" alt="" v-else />
+        <Lottie :options="defaultOptions" v-on:animCreated="handleAnimation" />
       </div>
       <p class="comingSoon">coming soon...</p>
     </div>
@@ -34,14 +24,27 @@
 </template>
 
 <script>
+import * as animationData from "@/assets/img/anim.json";
 import { onMounted } from "vue";
 import { isMobile } from "~/utils";
 
 export default {
   name: "ComingSoon",
   layout: "coming",
+  data() {
+    return {
+      defaultOptions: { animationData: animationData },
+      animationSpeed: 1,
+    };
+  },
+  methods: {
+    handleAnimation: function (anim) {
+      this.anim = anim;
+    },
+  },
   setup() {
     const isDeviceMobile = ref(true);
+    const test = animationData;
 
     onMounted(() => {
       if (!isMobile()) {
@@ -49,7 +52,7 @@ export default {
       }
     });
 
-    return { isDeviceMobile };
+    return { isDeviceMobile, test };
   },
 };
 </script>

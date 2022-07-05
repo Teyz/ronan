@@ -3,7 +3,7 @@ const path = require("path");
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  assetsInclude: ["**/*.mov", "@/assets/img/anim.mov"],
+  assetsInclude: ["**/*.mov", "**/*.lottie"],
   build: {
     extend(config) {
       config.module.rules.push({
@@ -16,6 +16,7 @@ export default defineNuxtConfig({
       });
     },
   },
+  plugins: ["vue-lottie"],
   vite: {
     css: {
       preprocessorOptions: {
