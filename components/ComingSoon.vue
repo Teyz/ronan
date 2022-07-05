@@ -35,6 +35,10 @@ export default {
 <style lang="scss" scoped>
 .comingSoonRoot {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100vh;
 
   .logo,
   .comingSoonAnimation {

@@ -7,7 +7,7 @@
 <style lang="scss" scoped>
 #__root {
   position: relative;
-  background: url("@/assets/img/texture.png") no-repeat center center fixed;
+  background: url("@/assets/img/texture.webp") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -15,12 +15,8 @@
   width: 100%;
   height: 100vh;
   min-height: 100px;
-  padding-top: 72px;
 
   @include above(small) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     min-height: 700px;
   }
 }
