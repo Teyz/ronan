@@ -8,11 +8,10 @@
       />
     </div>
     <div class="comingAnimation">
-      <img
-        src="@/assets/img/coming.svg"
-        alt="Animation Coming Soon Ronan By Clinet"
-        class="comingSoonAnimation"
-      />
+      <video width="700" loop autoplay>
+        <source src="@/assets/img/anim.webm" type="video/webm" />
+        Sorry, your browser doesn't support embedded videos.
+      </video>
       <p class="comingSoon">coming soon...</p>
     </div>
     <div class="contactRoot">
@@ -38,44 +37,17 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 80vh;
+  height: 100vh;
   min-height: 300px;
 
-  @include above(small) {
-    height: 100vh;
-    min-height: 700px;
-  }
-
   .logo {
+    margin: 0 auto;
+    display: block;
+    object-fit: cover;
     width: 110px;
 
     @include above(small) {
       width: 200px;
-    }
-  }
-
-  .logo,
-  .comingSoonAnimation {
-    margin: 0 auto;
-    display: block;
-    object-fit: cover;
-  }
-
-  .comingAnimation {
-    overflow: hidden;
-    max-width: 325px;
-  }
-
-  .comingSoonAnimation {
-    margin-top: 96px;
-    width: 500px;
-
-    @include above(small) {
-      width: 500px;
-    }
-
-    @include above(medium) {
-      width: 700px;
     }
   }
 
