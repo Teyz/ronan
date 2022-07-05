@@ -9,9 +9,9 @@
     </div>
     <div class="comingAnimation">
       <div class="comingAnimationContainer">
-        <video width="700" loop autoplay muted>
+        <video width="700" loop autoplay muted playsinline>
           <source src="@/assets/img/anim.webm" type="video/webm" />
-          <source src="@/assets/img/anim.mp4" type="video/mp4" />
+          <source src="@/assets/img/anim.mov" type="video/mp4" />
           Sorry, your browser doesn't support embedded videos.
         </video>
       </div>
@@ -40,8 +40,14 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 100vh;
-  min-height: 300px;
+  align-items: center;
+  padding: 56px 0;
+
+  @include above(small) {
+    height: 100vh;
+    min-height: 700px;
+    padding: 0;
+  }
 
   .logo {
     margin: 0 auto;
@@ -82,6 +88,11 @@ export default {
   .comingAnimation {
     max-width: 350px;
     overflow: hidden;
+    margin: 128px 0 104px 0;
+
+    @include above(small) {
+      margin: 0;
+    }
   }
 
   h2 {
@@ -105,6 +116,8 @@ export default {
     user-select: none;
     p {
       font-size: 12px;
+      color: #260f01;
+      text-decoration: none;
 
       @include above(small) {
         font-size: 16px;
