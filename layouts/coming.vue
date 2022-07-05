@@ -17,9 +17,12 @@
   min-height: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
 
   @include above(small) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     min-height: 700px;
   }
 }
