@@ -17,7 +17,7 @@ export default {
   data() {
     return {
       style: {
-        width: this.width ? `${this.width}px` : "100%",
+        width: "800px",
         height: this.height ? `${this.height}px` : "100%",
         overflow: "hidden",
         margin: "0 auto",

@@ -3,19 +3,6 @@ const path = require("path");
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  assetsInclude: ["**/*.mov", "**/*.lottie"],
-  build: {
-    extend(config) {
-      config.module.rules.push({
-        test: /\.(mov)$/i,
-        loader: "file-loader",
-        options: {
-          name: "[path][name].[ext]",
-          esModule: false,
-        },
-      });
-    },
-  },
   plugins: ["vue-lottie"],
   vite: {
     css: {

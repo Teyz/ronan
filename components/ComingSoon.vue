@@ -9,7 +9,7 @@
     </div>
     <div class="comingAnimation">
       <div class="comingAnimationContainer">
-        <Lottie :options="defaultOptions" v-on:animCreated="handleAnimation" />
+        <Lottie :options="lottieOptions" v-on:animCreated="handleAnimation" />
       </div>
       <p class="comingSoon">coming soon...</p>
     </div>
@@ -33,8 +33,9 @@ export default {
   layout: "coming",
   data() {
     return {
-      defaultOptions: { animationData: animationData },
-      animationSpeed: 1,
+      loading: false,
+      anim: null,
+      lottieOptions: { animationData: animationData },
     };
   },
   methods: {
@@ -44,7 +45,6 @@ export default {
   },
   setup() {
     const isDeviceMobile = ref(true);
-    const test = animationData;
 
     onMounted(() => {
       if (!isMobile()) {
@@ -52,7 +52,7 @@ export default {
       }
     });
 
-    return { isDeviceMobile, test };
+    return { isDeviceMobile };
   },
 };
 </script>
@@ -65,6 +65,7 @@ export default {
   justify-content: space-around;
   align-items: center;
   padding: 56px 0;
+  overflow-x: hidden;
 
   @include above(small) {
     height: 100vh;
@@ -84,26 +85,11 @@ export default {
   }
 
   .comingAnimationContainer {
-    max-width: 350px;
-    overflow: hidden;
+    object-fit: cover;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    @include above(small) {
-      max-width: 900px;
-      overflow: visible;
-    }
-
-    img {
-      object-fit: cover;
-      width: 700px;
-
-      @include above(small) {
-        width: 900px;
-      }
-    }
   }
 
   p {
@@ -123,7 +109,7 @@ export default {
   }
 
   .comingAnimation {
-    margin: 128px 0 104px 0;
+    margin: 112px 0 104px 0;
 
     @include above(small) {
       margin: 0;
