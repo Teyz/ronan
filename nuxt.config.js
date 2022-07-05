@@ -28,4 +28,22 @@ export default defineNuxtConfig({
       },
     },
   },
+  app: {
+    head: {
+      meta: [
+        {
+          name: "title",
+          content: "Ronan by Clinet",
+        },
+        {
+          hid: "og:title",
+          name: "og:title",
+          content: "Ronan by Clinet",
+        },
+      ],
+      link: [
+        { rel: "icon", type: "image/x-icon", href: "/static/favicon.ico" },
+      ],
+    },
+  },
 });
