@@ -15,6 +15,10 @@
   width: 100%;
   height: 100vh;
   min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   @include above(small) {
     min-height: 700px;

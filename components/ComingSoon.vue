@@ -37,7 +37,7 @@ export default {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   height: 95vh;
   min-height: 300px;
 
@@ -47,7 +47,11 @@ export default {
   }
 
   .logo {
-    width: 200px;
+    width: 110px;
+
+    @include above(small) {
+      width: 200px;
+    }
   }
 
   .logo,
@@ -59,23 +63,27 @@ export default {
 
   .comingSoonAnimation {
     margin-top: 96px;
-    width: 250px;
+    width: 325px;
 
     @include above(small) {
       width: 500px;
     }
 
     @include above(medium) {
-      width: 900px;
+      width: 700px;
     }
   }
 
   p {
     text-align: center;
     font-family: "SchnyderS";
-    font-size: 28px;
+    font-size: 16px;
     color: #260f01;
     font-weight: 100;
+
+    @include above(small) {
+      font-size: 28px;
+    }
   }
 
   .comingSoon {
@@ -85,15 +93,29 @@ export default {
   h2 {
     text-align: center;
     font-family: "1942";
-    font-size: 24px;
+    font-size: 19px;
     color: $secondary;
     margin-bottom: 12px;
+
+    @include above(small) {
+      font-size: 24px;
+    }
   }
 
   .contactRoot {
     margin-top: 96px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     p {
-      font-size: 16px;
+      font-size: 12px;
+
+      @include above(small) {
+        font-size: 16px;
+      }
     }
   }
 }

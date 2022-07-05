@@ -30,15 +30,26 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      title: "Ronan by Clinet | Pomerol",
+      htmlAttrs: {
+        lang: "fr,en",
+      },
       meta: [
         {
           name: "title",
-          content: "Ronan by Clinet",
+          content: "Ronan by Clinet | Pomerol",
         },
         {
-          hid: "og:title",
-          name: "og:title",
-          content: "Ronan by Clinet",
+          name: "description",
+          lang: "fr",
+          content:
+            "Ronan by Clinet est un Bordeaux séduisant et précis, produit par le Château Clinet, Grand Cru historique, main dans la main avec des viticulteurs partenaires consciencieux.",
+        },
+        {
+          name: "description",
+          lang: "en",
+          content:
+            "Ronan by Clinet is a new Bordeaux wine that balanced seduction with precision, produce by Château Clinet, an historic Grand Cru, in partnership with conscientious growers.",
         },
       ],
       link: [
