@@ -8,10 +8,12 @@
       />
     </div>
     <div class="comingAnimation">
-      <video width="700" loop autoplay muted>
-        <source src="@/assets/img/anim.webm" type="video/webm" />
-        Sorry, your browser doesn't support embedded videos.
-      </video>
+      <div class="comingAnimationContainer">
+        <video width="700" loop autoplay muted>
+          <source src="@/assets/img/anim.webm" type="video/webm" />
+          Sorry, your browser doesn't support embedded videos.
+        </video>
+      </div>
       <p class="comingSoon">coming soon...</p>
     </div>
     <div class="contactRoot">
@@ -51,6 +53,15 @@ export default {
     }
   }
 
+  .comingAnimationContainer {
+    max-width: 350px;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   p {
     text-align: center;
     font-family: "SchnyderS";
@@ -65,6 +76,11 @@ export default {
 
   .comingSoon {
     margin-top: 32px;
+  }
+
+  .comingAnimation {
+    max-width: 350px;
+    overflow: hidden;
   }
 
   h2 {
