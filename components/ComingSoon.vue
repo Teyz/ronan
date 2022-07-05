@@ -109,7 +109,7 @@ export default {
   }
 
   .comingAnimation {
-    margin: 112px 0 104px 0;
+    margin: 84px 0;
 
     @include above(small) {
       margin: 0;
