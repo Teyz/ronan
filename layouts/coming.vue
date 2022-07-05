@@ -14,7 +14,7 @@
   background-size: cover;
   width: 100%;
   height: 100vh;
-  min-height: 800px;
+  min-height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
