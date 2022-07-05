@@ -3,6 +3,19 @@ const path = require("path");
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  assetsInclude: ["**/*.mov", "@/assets/img/anim.mov"],
+  build: {
+    extend(config) {
+      config.module.rules.push({
+        test: /\.(mov)$/i,
+        loader: "file-loader",
+        options: {
+          name: "[path][name].[ext]",
+          esModule: false,
+        },
+      });
+    },
+  },
   vite: {
     css: {
       preprocessorOptions: {
@@ -51,6 +64,34 @@ export default defineNuxtConfig({
           content:
             "Ronan by Clinet is a new Bordeaux wine that balanced seduction with precision, produce by Château Clinet, an historic Grand Cru, in partnership with conscientious growers.",
         },
+        {
+          name: "format-detection",
+          content: "telephone=no",
+        },
+        { property: "og:image", content: "/static/ronan.png" },
+        {
+          hid: "og:url",
+          property: "og:url",
+          content: "https://ronan-by-clinet.netlify.app/",
+        },
+        { hid: "t-type", name: "twitter:card", content: "summary_large_image" },
+        {
+          hid: "t-type",
+          name: "twitter:url",
+          content: "https://ronan-by-clinet.netlify.app/",
+        },
+        {
+          hid: "t-type",
+          name: "twitter:title",
+          content: "Ronan by Clinet | Pomerol",
+        },
+        {
+          hid: "t-type",
+          name: "twitter:description",
+          content:
+            "Ronan by Clinet is a new Bordeaux wine that balanced seduction with precision, produce by Château Clinet, an historic Grand Cru, in partnership with conscientious growers.",
+        },
+        { hid: "t-type", name: "twitter:image", content: "/static/ronan.png" },
       ],
       link: [
         { rel: "icon", type: "image/x-icon", href: "/static/favicon.ico" },
