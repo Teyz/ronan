@@ -8,7 +8,7 @@
       />
     </div>
     <div class="comingAnimation">
-      <video width="700" loop autoplay>
+      <video width="700" loop autoplay muted>
         <source src="@/assets/img/anim.webm" type="video/webm" />
         Sorry, your browser doesn't support embedded videos.
       </video>
