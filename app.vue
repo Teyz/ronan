@@ -1,7 +1,6 @@
 <template>
-  <NuxtLayout name="coming">
-    <div id="app">
-      <ComingSoon />
-    </div>
+  <NuxtLayout name="custom">
+    <Hero />
+    <Movie />
   </NuxtLayout>
 </template>

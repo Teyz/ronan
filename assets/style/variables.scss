@@ -23,3 +23,17 @@ $secondary: #b71616;
     @content;
   }
 }
+
+@mixin typo-text-footer {
+  color: #260f01;
+  font-family: "1942";
+  font-size: 18px;
+  line-height: 18px;
+}
+
+@mixin typo-text-footer-mobile {
+  color: #260f01;
+  font-family: "1942";
+  font-size: 12px;
+  line-height: 18px;
+}

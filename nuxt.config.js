@@ -31,7 +31,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Ronan by Clinet | Pomerol",
+      title: "Ronan by Clinet | Coming Soony",
       htmlAttrs: {
         lang: "fr,en",
       },

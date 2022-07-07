@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="13.733" height="32.438" viewBox="0 0 13.733 32.438">
+  <g id="Pfeil" transform="translate(13.383 16.361) rotate(90)">
+    <path id="Tracé_37" data-name="Tracé 37" d="M8,20H38.923" transform="translate(-24.011 -13.484)" fill="rgba(0,0,0,0)" stroke="#260f01" stroke-linecap="round" stroke-width="0.7"/>
+    <path id="Tracé_38" data-name="Tracé 38" d="M6.516,0A6.517,6.517,0,0,0,0,6.516" transform="translate(9.211 6.516) rotate(-90)" fill="rgba(0,0,0,0)" stroke="#260f01" stroke-linecap="round" stroke-width="0.7"/>
+    <path id="Tracé_39" data-name="Tracé 39" d="M6.516,6.516A6.517,6.517,0,0,1,0,0" transform="translate(15.727 6.516) rotate(90)" fill="rgba(0,0,0,0)" stroke="#260f01" stroke-linecap="round" stroke-width="0.7"/>
+  </g>
+</svg>
