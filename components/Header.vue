@@ -1,59 +1,66 @@
 <template>
-  <header>
-    <div class="container">
-      <ul class="nav">
-        <li><a href="#movie">Film</a></li>
-        <li><a href="#mantras">Mantras</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <img
-        src="@/assets/img/logo.svg"
-        alt="Logo Ronan By Clinet"
-        class="logoDesktop"
-      />
-      <img
-        src="@/assets/img/logoMobile.svg"
-        alt="Logo Ronan By Clinet"
-        class="logoMobile"
-      />
-      <div class="languageRoot">
-        <span>FR</span>
-        <span> / </span>
-        <span>EN</span>
-      </div>
-      <div class="menu-icon">
-        <input class="menu-icon__cheeckbox" type="checkbox" />
-        <div>
-          <span></span>
-          <span></span>
+  <div class="headerRoot">
+    <slide-up-down v-model="showMenu" :duration="1000">
+      <MobileMenu />
+    </slide-up-down>
+    <header>
+      <div class="container">
+        <ul class="nav">
+          <li><a href="#movie">Film</a></li>
+          <li><a href="#mantras">Mantras</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <img
+          src="@/assets/img/logo.svg"
+          alt="Logo Ronan By Clinet"
+          class="logoDesktop"
+        />
+        <img
+          src="@/assets/img/logoMobile.svg"
+          alt="Logo Ronan By Clinet"
+          class="logoMobile"
+        />
+        <div class="languageRoot">
+          <span>FR</span>
+          <span> / </span>
+          <span>EN</span>
+        </div>
+        <div class="menu-icon">
+          <input
+            class="menu-icon__cheeckbox"
+            type="checkbox"
+            @click="toggleMenu"
+          />
+          <div>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="innerBurger">
-      <div class="languageRoot">
-        <span>FR</span>
-        <span> / </span>
-        <span>EN</span>
-      </div>
-      <ul class="nav">
-        <li><a href="#movie">Film</a></li>
-        <li><a href="#mantras">Mantras</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <ul class="socialLinks">
-        <li><a href="">facebook</a></li>
-        <li><a href="">instagram</a></li>
-      </ul>
-      <img
-        src="@/assets/img/logoMobile.svg"
-        alt="Logo Ronan By Clinet"
-        class="logoMobile"
-      />
-    </div>
-  </header>
+    </header>
+  </div>
 </template>
 
+<script>
+import SlideUpDown from "vue3-slide-up-down";
+export default {
+  name: "Header",
+  components: { SlideUpDown },
+  setup() {
+    const showMenu = ref(false);
+    const toggleMenu = () => {
+      showMenu.value = !showMenu.value;
+    };
+
+    return { showMenu, toggleMenu };
+  },
+};
+</script>
+
 <style lang="scss" scoped>
+.headerRoot {
+  overflow: hidden;
+}
 header {
   position: absolute;
   top: 0;
@@ -61,10 +68,10 @@ header {
   z-index: 2;
 
   width: 100%;
-  padding: 30px 24px;
+  padding: 32px 24px;
 
   @include above(big) {
-    padding: 56px 80px;
+    padding: 40px 80px;
   }
 
   .container {
@@ -134,7 +141,7 @@ header {
     display: none;
 
     @include above(big) {
-      display: block;
+      display: flex;
     }
 
     li {
@@ -168,6 +175,11 @@ header {
     width: 50px;
     height: 50px;
     cursor: pointer;
+    z-index: 10;
+
+    @include above(big) {
+      display: none;
+    }
 
     .menu-icon__cheeckbox {
       display: block;
@@ -237,65 +249,6 @@ header {
         span:last-of-type {
           width: 12px;
         }
-      }
-    }
-  }
-
-  .innerBurger {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: url("@/assets/img/texture.webp") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    .languageRoot {
-      display: block;
-      margin-bottom: 42px;
-    }
-
-    .logoMobile {
-      top: 30px;
-    }
-
-    .socialLinks {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      li {
-        margin: 0 6px;
-
-        a {
-          font-family: "SchnyderS";
-          color: #260f01;
-          font-size: 12px;
-          line-height: 18px;
-        }
-      }
-    }
-
-    .nav {
-      display: block;
-
-      li {
-        text-align: center;
-        margin: 18px 0;
-      }
-
-      a {
-        font-size: 28px;
-        font-weight: 100;
-        opacity: 50%;
       }
     }
   }
