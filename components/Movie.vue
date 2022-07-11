@@ -1,9 +1,9 @@
 <template>
   <div class="movieRoot">
-    <video controls width="1156" id="movie">
+    <!-- <video controls width="1156" id="movie">
       <source src="@/assets/img/movie.mp4" type="video/mp4" />
       Sorry, your browser doesn't support embedded videos.
-    </video>
+    </video> -->
   </div>
 </template>
 
