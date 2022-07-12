@@ -5,6 +5,7 @@
 <script>
 import lottie from "lottie-web";
 export default {
+  name: "Lottie",
   props: {
     options: {
       type: Object,

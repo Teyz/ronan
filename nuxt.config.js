@@ -3,7 +3,7 @@ const path = require("path");
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  plugins: ["vue-lottie"],
+  plugins: ["vue3-slide-up-down"],
   vite: {
     css: {
       preprocessorOptions: {
@@ -13,6 +13,7 @@ export default defineNuxtConfig({
       },
     },
   },
+  modules: ["@vueuse/nuxt"],
   css: ["@/assets/style/reset.scss"],
   resolve: {
     alias: [
@@ -31,7 +32,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Ronan by Clinet | Pomerol",
+      title: "Ronan by Clinet | Coming Soony",
       htmlAttrs: {
         lang: "fr,en",
       },
