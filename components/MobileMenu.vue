@@ -1,10 +1,5 @@
 <template>
   <div class="innerBurger">
-    <img
-      src="@/assets/img/logoMobile.svg"
-      alt="Logo Ronan By Clinet"
-      class="logoMobile"
-    />
     <div class="main">
       <div class="languageRoot">
         <span>FR</span>

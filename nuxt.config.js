@@ -13,6 +13,7 @@ export default defineNuxtConfig({
       },
     },
   },
+  modules: ["@vueuse/nuxt"],
   css: ["@/assets/style/reset.scss"],
   resolve: {
     alias: [

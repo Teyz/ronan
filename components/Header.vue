@@ -3,7 +3,7 @@
     <slide-up-down v-model="showMenu" :duration="1000">
       <MobileMenu />
     </slide-up-down>
-    <header>
+    <header :class="{ isSticky }">
       <div class="container">
         <ul class="nav">
           <li><a href="#movie">Film</a></li>
@@ -11,14 +11,14 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
         <img
-          src="@/assets/img/logo.svg"
-          alt="Logo Ronan By Clinet"
-          class="logoDesktop"
-        />
-        <img
           src="@/assets/img/logoMobile.svg"
           alt="Logo Ronan By Clinet"
           class="logoMobile"
+        />
+        <img
+          src="@/assets/img/logo.svg"
+          alt="Logo Ronan By Clinet"
+          class="logoDesktop"
         />
         <div class="languageRoot">
           <span>FR</span>
@@ -42,6 +42,7 @@
 </template>
 
 <script>
+import { useWindowScroll } from "@vueuse/core";
 import SlideUpDown from "vue3-slide-up-down";
 export default {
   name: "Header",
@@ -51,8 +52,20 @@ export default {
     const toggleMenu = () => {
       showMenu.value = !showMenu.value;
     };
+    const { y } = useWindowScroll();
 
-    return { showMenu, toggleMenu };
+    const isSticky = ref(false);
+
+    watch(y, (newValue) => {
+      if (newValue > 110) {
+        isSticky.value = true;
+      }
+      if (newValue < 110) {
+        isSticky.value = false;
+      }
+    });
+
+    return { showMenu, toggleMenu, y, isSticky };
   },
 };
 </script>
@@ -68,10 +81,34 @@ header {
   z-index: 2;
 
   width: 100%;
-  padding: 32px 24px;
+  padding: 24px;
 
   @include above(big) {
     padding: 40px 80px;
+    &.isSticky {
+      padding: 24px 80px;
+    }
+  }
+
+  &.isSticky {
+    box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.1);
+
+    transition: all 0.5s ease;
+    animation: smoothScroll 0.5s forwards;
+    position: fixed;
+    background: url("@/assets/img/texture.webp") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    .logoMobile {
+      display: block;
+    }
+
+    .logoDesktop {
+      display: none;
+    }
   }
 
   .container {
@@ -251,6 +288,15 @@ header {
         }
       }
     }
+  }
+}
+
+@keyframes smoothScroll {
+  0% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 </style>
