@@ -1,9 +1,8 @@
 <template>
   <div class="movieRoot">
-    <!-- <video controls width="1156" id="movie">
-      <source src="@/assets/img/movie.mp4" type="video/mp4" />
-      Sorry, your browser doesn't support embedded videos.
-    </video> -->
+    <video controls width="1156" id="movie">
+      <source src="https://vimeo.com/369521302" />
+    </video>
   </div>
 </template>
 
@@ -15,7 +14,7 @@
     padding: 200px 142px;
   }
   position: relative;
-  &:after {
+  &:before {
     content: "";
     width: 1px;
     height: 135px;
@@ -27,6 +26,22 @@
 
     @include above(big) {
       top: -5%;
+      height: 180px;
+    }
+  }
+
+  &:after {
+    content: "";
+    width: 1px;
+    height: 135px;
+    background-color: $secondary;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20%;
+
+    @include above(big) {
+      bottom: -5%;
       height: 180px;
     }
   }
