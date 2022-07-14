@@ -24,11 +24,17 @@
     li {
       font-family: "SchnyderS";
       color: #00000029;
-      font-size: 44px;
+      font-size: 33px;
       line-height: 61px;
       margin: 0 16px;
       transition: all 0.5s ease;
       cursor: default;
+      text-align: center;
+
+      @include above(big) {
+        font-size: 44px;
+        text-align: left;
+      }
 
       &:hover {
         color: #b71616;

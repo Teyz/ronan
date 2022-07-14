@@ -48,21 +48,9 @@
 
   video {
     width: 100%;
-    max-width: 320px;
+    max-width: 100%;
     margin: 0 auto;
     display: block;
-
-    @include above(small) {
-      max-width: 500px;
-    }
-
-    @include above(big) {
-      max-width: 1156px;
-    }
-
-    @include above(large) {
-      max-width: 1500px;
-    }
   }
 }
 </style>

@@ -116,6 +116,7 @@
 
 <style lang="scss" scoped>
 .mantraHeader {
+  padding: 0 72px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,7 +124,12 @@
   height: 100vh;
   max-height: 100vh;
   position: relative;
-  margin-bottom: 360px;
+  margin-bottom: 0;
+
+  @include above(small) {
+    padding: 0 160px;
+    margin-bottom: 360px;
+  }
 
   &:after {
     content: "";
@@ -133,11 +139,12 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -10%;
+    display: none;
 
     @include above(big) {
       bottom: -30%;
       height: 180px;
+      display: block;
     }
   }
 
@@ -200,13 +207,18 @@
   }
 
   .sliderStep {
-    font-size: 21px;
-    line-height: 29px;
+    font-size: 13px;
+    line-height: 19px;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-top: 48px;
     text-align: center;
     display: block;
+
+    @include above(small) {
+      font-size: 21px;
+      line-height: 29px;
+    }
   }
 
   h2 {
@@ -214,10 +226,15 @@
     max-width: 522px;
     font-family: "SchnyderS";
     color: #260f01;
-    font-size: 73px;
-    line-height: 60px;
+    font-size: 32px;
+    line-height: 28px;
     margin: 16px auto 56px auto;
     text-align: center;
+
+    @include above(small) {
+      font-size: 73px;
+      line-height: 60px;
+    }
 
     span {
       color: #b71616;

@@ -111,11 +111,15 @@
 
 <style lang="scss" scoped>
 .mantraControlsRoot {
+  padding: 0 48px;
   margin: 42px auto 160px auto;
-  padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @include above(big) {
+    padding: 0 160px;
+  }
 
   div {
     position: relative;

@@ -18,7 +18,7 @@
           paysages vallonnés.
         </p>
         <img src="@/assets/img/mantra-1/photo2.webp" alt="" />
-        <h3>Partager fait partie de notre metier</h3>
+        <h3>Èquilibre digne d’un funambule</h3>
       </div>
     </div>
   </div>
@@ -26,6 +26,9 @@
 
 <style lang="scss" scoped>
 .mantraContentRoot {
+  @include above(big) {
+    padding: 0 160px;
+  }
   .headerImage {
     position: relative;
 
@@ -36,10 +39,9 @@
       background-color: #ae0721;
       position: absolute;
       left: 10%;
-      bottom: 2%;
+      bottom: -30%;
 
       @include above(big) {
-        bottom: -30%;
         height: 180px;
       }
     }
@@ -48,34 +50,59 @@
   .firstImage {
     object-fit: cover;
     max-width: 100%;
+    height: 270px;
+
+    @include above(big) {
+      height: 100%;
+    }
   }
 
   .content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-top: 12px;
     position: relative;
 
+    @include above(big) {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin: 12px 0 0 0;
+    }
+
     img {
-      max-width: 640px;
+      max-width: 100%;
       object-fit: cover;
+
+      @include above(big) {
+        max-width: 640px;
+      }
     }
 
     p {
-      max-width: 350px;
+      margin: 112px auto 104px auto;
+      max-width: 300px;
+
+      @include above(big) {
+        margin: 0;
+        max-width: 350px;
+      }
     }
 
     h3 {
       color: #ae0721;
       position: absolute;
       right: 0;
-      bottom: -30%;
-      font-size: 73px;
-      line-height: 53px;
+      bottom: -16%;
+      font-size: 51px;
+      line-height: 34px;
       font-family: "Sebastian";
-      max-width: 360px;
+      max-width: 205px;
       -webkit-text-stroke: 1px #ae0721;
+
+      @include above(big) {
+        bottom: -30%;
+        font-size: 73px;
+        line-height: 53px;
+        max-width: 360px;
+      }
     }
   }
 }

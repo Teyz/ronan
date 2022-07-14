@@ -7,9 +7,3 @@
     <MantraControls />
   </div>
 </template>
-
-<style lang="scss" scoped>
-.mantraRoot {
-  padding: 0 160px;
-}
-</style>
