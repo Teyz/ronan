@@ -163,7 +163,7 @@
     height: 280px;
     object-fit: cover;
 
-    @include above(big) {
+    @include above(small) {
       height: 100%;
     }
   }
