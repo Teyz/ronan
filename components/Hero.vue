@@ -77,7 +77,7 @@
 
   img {
     object-fit: cover;
-    max-width: 180px;
+    max-width: 120px;
     width: 100%;
 
     @include above(big) {
