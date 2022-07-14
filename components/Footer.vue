@@ -77,6 +77,10 @@ footer {
         font-family: "SchnyderS";
         font-weight: 100;
         line-height: 18px;
+
+        @include above(big) {
+          font-size: 18px;
+        }
       }
 
       &:first-child {

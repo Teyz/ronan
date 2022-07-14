@@ -77,7 +77,7 @@
 
   img {
     object-fit: cover;
-    max-width: 180px;
+    max-width: 120px;
     width: 100%;
 
     @include above(big) {
@@ -136,6 +136,13 @@
       width: 100%;
       max-width: 13px;
       height: 100%;
+      transition: all 0.5s ease;
+    }
+
+    &:hover {
+      &:after {
+        top: 50px;
+      }
     }
   }
 }

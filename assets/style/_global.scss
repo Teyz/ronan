@@ -2,8 +2,13 @@
 @import "./variables.scss";
 @import "./typograhie.scss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: $primary;
+  overflow-x: hidden;
 }
 
 * {

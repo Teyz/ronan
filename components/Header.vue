@@ -91,8 +91,6 @@ header {
   }
 
   &.isSticky {
-    box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.1);
-
     transition: all 0.5s ease;
     animation: smoothScroll 0.5s forwards;
     position: fixed;

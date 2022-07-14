@@ -1,5 +1,6 @@
 <template>
   <div class="innerBurger">
+    <div></div>
     <div class="main">
       <div class="languageRoot">
         <span>FR</span>
