@@ -52,7 +52,7 @@
     max-width: 100%;
     height: 270px;
 
-    @include above(big) {
+    @include above(small) {
       height: 100%;
     }
   }
