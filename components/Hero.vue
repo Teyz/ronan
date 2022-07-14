@@ -136,6 +136,13 @@
       width: 100%;
       max-width: 13px;
       height: 100%;
+      transition: all 0.5s ease;
+    }
+
+    &:hover {
+      &:after {
+        top: 50px;
+      }
     }
   }
 }

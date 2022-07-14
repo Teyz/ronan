@@ -53,4 +53,8 @@
     display: block;
   }
 }
+
+#movie {
+  scroll-margin-top: 120px;
+}
 </style>
