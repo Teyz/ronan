@@ -13,7 +13,14 @@ export default defineNuxtConfig({
       },
     },
   },
-  modules: ["@vueuse/nuxt"],
+  modules: ["@vueuse/nuxt", "@intlify/nuxt3"],
+  intlify: {
+    localeDir: "lang",
+    vueI18n: {
+      locale: "fr",
+      availableLocales: ["en", "fr"],
+    },
+  },
   css: ["@/assets/style/reset.scss"],
   resolve: {
     alias: [

@@ -13,3 +13,12 @@ export const isMobile = () => {
     return navigator.userAgent.match(toMatchItem);
   });
 };
+
+export const disableScroll = (disableScroll) => {
+  const html = document?.querySelector("body");
+  if (disableScroll) {
+    html.style.overflowY = "hidden";
+  } else {
+    html.style.overflowY = "auto";
+  }
+};

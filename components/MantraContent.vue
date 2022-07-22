@@ -3,26 +3,43 @@
     <div class="firstBlock">
       <div class="headerImage">
         <img
-          src="@/assets/img/mantra-1/photo1.webp"
+          :src="slide.images?.mantra_content_image_1"
           alt=""
           class="firstImage"
         />
       </div>
-      <div class="content">
+      <div class="content" :class="{ isReverse }">
         <p>
-          Appréciant la vie bordelaise, à fouler ses pavés et admirer ses
-          monuments, Ronan sait aussi s’en échapper pour contempler la nature
-          environnante et s’inspirer de la créativité et du sentiment d’humilité
-          qu’elle génère. Ayant troqué ses mocassins pour une paire de bottes,
-          on retrouve Ronan à quelques encablures de la grande ville, entouré de
-          paysages vallonnés.
+          {{ $t(`mantra-${index}-content-text`) }}
         </p>
-        <img src="@/assets/img/mantra-1/photo2.webp" alt="" />
-        <h3>Èquilibre digne d’un funambule</h3>
+        <div class="imageContent">
+          <img :src="slide.images?.mantra_content_image_2" alt="" />
+          <h3>{{ $t(`mantra-${index}-content-citation`) }}</h3>
+        </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "MantraContent",
+  props: {
+    slide: {
+      type: Object,
+      default: () => {},
+    },
+    index: {
+      type: Number,
+      default: 1,
+    },
+    isReverse: {
+      type: Boolean,
+      default: false,
+    },
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .mantraContentRoot {
@@ -42,7 +59,8 @@
       bottom: -30%;
 
       @include above(big) {
-        height: 180px;
+        height: 260px;
+        bottom: -40%;
       }
     }
   }
@@ -65,6 +83,14 @@
       justify-content: space-between;
       align-items: flex-end;
       margin: 12px 0 0 0;
+
+      &.isReverse {
+        flex-direction: row-reverse;
+
+        h3 {
+          left: 0;
+        }
+      }
     }
 
     img {
@@ -81,20 +107,25 @@
       max-width: 300px;
 
       @include above(big) {
+        text-align: left;
         margin: 0;
         max-width: 350px;
       }
+    }
+
+    .imageContent {
+      position: relative;
     }
 
     h3 {
       color: #ae0721;
       position: absolute;
       right: 0;
-      bottom: -16%;
+      bottom: -35%;
       font-size: 51px;
       line-height: 34px;
       font-family: "Sebastian";
-      max-width: 205px;
+      max-width: 250px;
       -webkit-text-stroke: 1px #ae0721;
 
       @include above(big) {

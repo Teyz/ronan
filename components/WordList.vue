@@ -1,15 +1,30 @@
 <template>
   <div class="wordListRoot">
     <ul>
-      <li>harmonie avec la nature</li>
-      <li>pouvoir de la séléction</li>
-      <li>prendre le temps</li>
-      <li>construire les bonnes relations</li>
-      <li>savoir profite</li>
-      <li>partager ce plaisir</li>
+      <li @click="goToSlide(0)">{{ $t("mantra-1-wordlist") }}</li>
+      <li @click="goToSlide(1)">{{ $t("mantra-2-wordlist") }}</li>
+      <li @click="goToSlide(2)">{{ $t("mantra-3-wordlist") }}</li>
+      <li @click="goToSlide(3)">{{ $t("mantra-4-wordlist") }}</li>
+      <li @click="goToSlide(4)">{{ $t("mantra-5-wordlist") }}</li>
+      <li @click="goToSlide(5)">{{ $t("mantra-6-wordlist") }}</li>
     </ul>
   </div>
 </template>
+
+<script>
+export default {
+  name: "WordList",
+  setup(props, { emit }) {
+    const goToSlide = (goToSlideNumber) => {
+      const mantraHeader = document.getElementById("mantraHeader");
+      mantraHeader.scrollIntoView();
+      emit("goToSlide", goToSlideNumber);
+    };
+
+    return { goToSlide };
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .wordListRoot {
@@ -28,7 +43,7 @@
       line-height: 61px;
       margin: 0 16px;
       transition: all 0.5s ease;
-      cursor: default;
+      cursor: pointer;
       text-align: center;
 
       @include above(big) {

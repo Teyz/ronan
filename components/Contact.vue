@@ -1,5 +1,5 @@
 <template>
-  <div class="contactRoot">
+  <div class="contactRoot" id="contact">
     <img src="@/assets/img/montgolfiere.webp" alt="" />
     <h3>contact</h3>
     <p>

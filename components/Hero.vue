@@ -2,14 +2,35 @@
   <div class="heroRoot">
     <div class="container">
       <img src="@/assets/img/ronandesktop.svg" alt="" />
-      <h1>
-        savoir-<span>faire</span>,<br />
-        savoir-<span>vivre</span>, savoir-<span>être</span>
+      <h1 v-if="locale === 'fr'">
+        {{ $t("title") }}<span>{{ $t("subtitle") }}</span
+        ><br />
+        {{ $t("subtitle2") }}<span>{{ $t("subtitle3") }}</span
+        >{{ $t("subtitle4") }}<span>{{ $t("subtitle5") }}</span>
       </h1>
-      <a href="#movie">découvrir</a>
+      <h1 v-else>
+        {{ $t("title") }}<span>{{ $t("subtitle") }}</span
+        ><br />
+        {{ $t("subtitle2") }}<span>{{ $t("subtitle3") }}</span>
+      </h1>
+      <a href="#movie">{{ $t("discover") }}</a>
     </div>
   </div>
 </template>
+
+<script>
+import { useI18n } from "vue-i18n";
+export default {
+  name: "Hero",
+  setup() {
+    const { locale } = useI18n();
+
+    return {
+      locale,
+    };
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .heroRoot {
@@ -22,6 +43,7 @@
   background-size: cover;
   overflow: hidden;
   width: 100%;
+  z-index: 2;
 
   &:before {
     content: "";

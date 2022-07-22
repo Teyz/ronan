@@ -3,11 +3,6 @@
     <Header />
     <slot />
     <Footer />
+    <ScrollToTop />
   </div>
 </template>
-
-<script>
-export default {
-  name: "CustomLayout",
-};
-</script>

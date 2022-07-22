@@ -1,29 +1,52 @@
 <template>
   <div class="mantraImageTextRoot">
-    <div class="mantraImageTextHeader">
-      <img src="@/assets/img/mantra-1/photo3.webp" alt="" />
+    <img
+      :src="slide?.images?.mantra_image_text_image_illus"
+      alt=""
+      class="illustration"
+    />
+    <div class="mantraImageTextHeader" :class="{ isCitation }">
+      <img :src="slide?.images?.mantra_image_text_image_1" alt="" />
       <p>
-        Attaché à cette nature tendre et sauvage, c’est ici que Ronan vit avec
-        sa famille et qu’il sélectionne les vignes destinées au vin éponyme.
-        Polyculture, plantation d’arbres fruitiers, et élevage d’animaux sont
-        des pratiques courantes dans ces vignobles où vie familiale et travail
-        se mêlent avec harmonie.
+        {{ $t(`mantra-${index}-image-first-text`) }}
       </p>
-      <h3>Partager fait partie de notre metier</h3>
+      <h3>{{ $t(`mantra-${index}-image-citation`) }}</h3>
     </div>
-    <div class="mantraImageTextContent">
+    <div class="mantraImageTextContent" v-if="!isCitation">
       <div class="textImage">
-        <img src="@/assets/img/mantra-1/photo4.webp" alt="" />
+        <img :src="slide?.images?.mantra_image_text_image_2" alt="" />
         <p>
-          C’est cette même philosophie de vie et ce même respect pour la nature
-          qui unissent Ronan et les vignerons qui l’entourent dans cette
-          aventure viticole.
+          {{ $t(`mantra-${index}-image-second-text`) }}
         </p>
       </div>
-      <img src="@/assets/img/mantra-1/photo5.webp" alt="" class="largeImage" />
+      <img
+        :src="slide?.images?.mantra_image_text_image_3"
+        alt=""
+        class="largeImage"
+      />
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "MantraImageText",
+  props: {
+    isCitation: {
+      type: Boolean,
+      default: false,
+    },
+    index: {
+      type: Number,
+      default: 1,
+    },
+    slide: {
+      type: Object,
+      default: () => {},
+    },
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .mantraImageTextRoot {
@@ -32,11 +55,8 @@
     padding: 0 160px;
   }
   position: relative;
-  &:before {
-    content: "";
-    background-image: url("@/assets/img/mantra-1/illus2.png");
-    background-repeat: no-repeat;
-    background-size: contain;
+  .illustration {
+    object-fit: contain;
     width: 100px;
     height: 100%;
     position: absolute;
@@ -46,8 +66,8 @@
     @include above(big) {
       width: 200px;
       height: 100%;
-      right: -21%;
-      top: 40%;
+      right: -5%;
+      top: 13%;
     }
   }
   .mantraImageTextHeader {
@@ -96,6 +116,7 @@
         font-size: 22px;
         max-width: 435px;
         margin: 88px 0 0 0;
+        text-align: left;
       }
     }
 
@@ -117,6 +138,17 @@
         right: 13%;
         max-width: 360px;
         bottom: -30%;
+      }
+    }
+
+    &.isCitation {
+      h3 {
+        font-family: "1942";
+        font-size: 20px;
+        color: #260f01;
+        line-height: 20px;
+        text-align: left;
+        max-width: 410px;
       }
     }
   }
@@ -148,6 +180,7 @@
       font-style: italic;
 
       @include above(big) {
+        text-align: left;
         font-size: 32px;
         line-height: 38px;
         max-width: 497px;
