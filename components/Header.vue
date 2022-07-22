@@ -7,23 +7,25 @@
       <div class="container">
         <ul class="nav">
           <li><a href="#movie">Film</a></li>
-          <li><a href="#mantras">Mantras</a></li>
+          <li><a href="#mantraHeader">Mantras</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <img
           src="@/assets/img/logoMobile.svg"
           alt="Logo Ronan By Clinet"
           class="logoMobile"
+          @click="goToHome"
         />
         <img
           src="@/assets/img/logo.svg"
           alt="Logo Ronan By Clinet"
           class="logoDesktop"
+          @click="goToHome"
         />
         <div class="languageRoot">
-          <span>FR</span>
+          <span @click="changeLang('fr')" :class="{ isFrenchActive }">FR</span>
           <span> / </span>
-          <span>EN</span>
+          <span @click="changeLang('en')" :class="{ isEnglishActive }">EN</span>
         </div>
         <div class="menu-icon">
           <input
@@ -43,6 +45,7 @@
 
 <script>
 import { useWindowScroll } from "@vueuse/core";
+import { useI18n } from "vue-i18n";
 import SlideUpDown from "vue3-slide-up-down";
 export default {
   name: "Header",
@@ -52,9 +55,32 @@ export default {
     const toggleMenu = () => {
       showMenu.value = !showMenu.value;
     };
+
+    const isFrenchActive = ref(true);
+    const isEnglishActive = ref(false);
+
     const { y } = useWindowScroll();
 
     const isSticky = ref(false);
+
+    const { locale } = useI18n();
+
+    const router = useRouter();
+
+    const goToHome = () => {
+      router.push({ path: "/" });
+    };
+
+    const changeLang = (lang) => {
+      if (lang === "en") {
+        isEnglishActive.value = true;
+        isFrenchActive.value = false;
+      } else {
+        isEnglishActive.value = false;
+        isFrenchActive.value = true;
+      }
+      locale.value = lang;
+    };
 
     watch(y, (newValue) => {
       if (newValue > 110) {
@@ -65,7 +91,16 @@ export default {
       }
     });
 
-    return { showMenu, toggleMenu, y, isSticky };
+    return {
+      showMenu,
+      toggleMenu,
+      y,
+      isSticky,
+      changeLang,
+      isFrenchActive,
+      isEnglishActive,
+      goToHome,
+    };
   },
 };
 </script>
@@ -78,7 +113,7 @@ header {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 20;
 
   width: 100%;
   padding: 24px;
@@ -101,10 +136,12 @@ header {
     background-size: cover;
 
     .logoMobile {
+      cursor: pointer;
       display: block;
     }
 
     .logoDesktop {
+      cursor: pointer;
       display: none;
     }
   }
@@ -120,6 +157,7 @@ header {
   }
 
   .logoDesktop {
+    cursor: pointer;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -162,7 +200,9 @@ header {
       text-transform: uppercase;
       cursor: pointer;
 
-      &:hover {
+      &:hover,
+      &.isEnglishActive,
+      &.isFrenchActive {
         color: $secondary;
       }
     }

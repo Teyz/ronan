@@ -1,13 +1,31 @@
 <template>
   <div class="mantraSimpleTextRoot">
+    <img :src="slide?.images?.illus_1" alt="" v-if="!noIllus" />
     <p>
-      Dans ces collines, parsemées de vignes, flotte un léger voile brumeux au
-      petit matin qui laisse parfois entrevoir l'ombre d'une biche égarée de sa
-      forêt avoisinante. L'air frais et pur vient rosir les joues qui seront
-      bientôt réchauffées par un soleil étincelant.
+      {{ $t(`mantra-${index}-simple-text`) }}
     </p>
   </div>
 </template>
+
+<script>
+export default {
+  name: "MantraSimpleText",
+  props: {
+    index: {
+      type: Number,
+      default: 1,
+    },
+    slide: {
+      type: Object,
+      default: () => {},
+    },
+    noIllus: {
+      type: Boolean,
+      default: false,
+    },
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .mantraSimpleTextRoot {
@@ -18,20 +36,17 @@
     padding: 320px 140px 144px 140px;
   }
 
-  &:before {
+  img {
     content: "";
-    background-image: url("@/assets/img/mantra-1/Illu1.webp");
-    background-repeat: no-repeat;
-    background-size: contain;
+    object-fit: contain;
     width: 150px;
-    height: 100%;
     position: absolute;
     left: -10%;
     top: 12%;
 
     @include above(big) {
-      left: -23%;
-      top: 40%;
+      left: -5%;
+      top: 15%;
       width: 200px;
     }
   }

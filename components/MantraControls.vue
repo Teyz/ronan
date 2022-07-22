@@ -1,6 +1,6 @@
 <template>
-  <div class="mantraControlsRoot">
-    <div>
+  <div class="mantraControlsRoot" :class="{ isSmall }">
+    <div @click="prevSlide">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20.479"
@@ -48,11 +48,10 @@
           </g>
         </g>
       </svg>
-
-      précendant
+      {{ $t("next") }}
     </div>
-    <div>
-      suivant
+    <div @click="nextSlide">
+      {{ $t("prev") }}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20.479"
@@ -109,6 +108,42 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: "MantraControls",
+  emits: ["onNext", "onPrev"],
+  props: {
+    isSmall: {
+      type: Boolean,
+      default: false,
+    },
+    slide: {
+      type: Object,
+      default: () => {},
+    },
+  },
+  setup(props, { emit }) {
+    const nextSlide = () => {
+      const mantraHeader = document.getElementById("mantraHeader");
+      mantraHeader.scrollIntoView();
+      setTimeout(() => {
+        emit("onNext");
+      }, 1000);
+    };
+
+    const prevSlide = () => {
+      const mantraHeader = document.getElementById("mantraHeader");
+      mantraHeader.scrollIntoView();
+      setTimeout(() => {
+        emit("onPrev");
+      }, 1000);
+    };
+
+    return { nextSlide, prevSlide };
+  },
+};
+</script>
+
 <style lang="scss" scoped>
 .mantraControlsRoot {
   padding: 0 48px;
@@ -119,6 +154,12 @@
 
   @include above(big) {
     padding: 0 160px;
+  }
+
+  &.isSmall {
+    max-width: 300px;
+    width: 100%;
+    padding: 0;
   }
 
   div {

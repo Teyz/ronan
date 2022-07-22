@@ -1,120 +1,71 @@
 <template>
-  <div class="mantraHeader">
-    <img src="@/assets/img/raisin.png" alt="" />
-    <span class="sliderStep">Mantra 1/6</span>
-    <h2>vivre en harmonie avec <span>la nature</span></h2>
-    <div class="sliderControls">
-      <div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20.479"
-          height="14.033"
-          viewBox="0 0 20.479 14.033"
-          id="flecheG"
-        >
-          <g transform="translate(0.5 0.5)">
-            <g id="Groupe_399" data-name="Groupe 399">
-              <g id="Line-2" transform="translate(0.815 6.516)">
-                <path
-                  id="Tracé_37"
-                  data-name="Tracé 37"
-                  d="M26.664,20H8"
-                  transform="translate(-8 -20)"
-                  fill="rgba(0,0,0,0)"
-                  stroke="#260f01"
-                  stroke-linecap="round"
-                  stroke-width="1"
-                />
-              </g>
-              <g id="Oval" transform="translate(0 6.516) rotate(-90)">
-                <path
-                  id="Tracé_38"
-                  data-name="Tracé 38"
-                  d="M6.516,6.516A6.517,6.517,0,0,1,0,0"
-                  transform="translate(0)"
-                  fill="rgba(0,0,0,0)"
-                  stroke="#260f01"
-                  stroke-linecap="round"
-                  stroke-width="1"
-                />
-              </g>
-              <g id="Oval-Copy" transform="translate(6.516 6.516) rotate(90)">
-                <path
-                  id="Tracé_39"
-                  data-name="Tracé 39"
-                  d="M6.516,0A6.517,6.517,0,0,0,0,6.516"
-                  fill="rgba(0,0,0,0)"
-                  stroke="#260f01"
-                  stroke-linecap="round"
-                  stroke-width="1"
-                />
-              </g>
-            </g>
-          </g>
-        </svg>
-
-        précendant
-      </div>
-      <div>
-        suivant
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20.479"
-          height="14.033"
-          viewBox="0 0 20.479 14.033"
-          id="flecheD"
-        >
-          <g transform="translate(4.251 0.5)">
-            <g
-              id="Groupe_399"
-              data-name="Groupe 399"
-              transform="translate(-3.751 0)"
-            >
-              <g id="Line-2" transform="translate(0 6.516)">
-                <path
-                  id="Tracé_37"
-                  data-name="Tracé 37"
-                  d="M8,20H26.664"
-                  transform="translate(-8 -20)"
-                  fill="rgba(0,0,0,0)"
-                  stroke="#260f01"
-                  stroke-linecap="round"
-                  stroke-width="1"
-                />
-              </g>
-              <g id="Oval" transform="translate(12.962 6.516) rotate(-90)">
-                <path
-                  id="Tracé_38"
-                  data-name="Tracé 38"
-                  d="M6.516,0A6.517,6.517,0,0,0,0,6.516"
-                  transform="translate(0 0)"
-                  fill="rgba(0,0,0,0)"
-                  stroke="#260f01"
-                  stroke-linecap="round"
-                  stroke-width="1"
-                />
-              </g>
-              <g id="Oval-Copy" transform="translate(19.479 6.516) rotate(90)">
-                <path
-                  id="Tracé_39"
-                  data-name="Tracé 39"
-                  d="M6.516,6.516A6.517,6.517,0,0,1,0,0"
-                  transform="translate(0 0)"
-                  fill="rgba(0,0,0,0)"
-                  stroke="#260f01"
-                  stroke-linecap="round"
-                  stroke-width="1"
-                />
-              </g>
-            </g>
-          </g>
-        </svg>
-      </div>
-    </div>
+  <div class="mantraHeader" id="mantraHeader">
+    <img :src="slide.images?.mantra_header" alt="" />
+    <span class="sliderStep">Mantra {{ currentSlide + 1 }}/6</span>
+    <h2 v-if="reverseTitle">
+      <span>{{ $t(`mantra-${index}-title`) }}</span
+      >{{ $t(`mantra-${index}-subtitle`) }}
+    </h2>
+    <h2 v-else-if="redMiddleTitle">
+      {{ $t(`mantra-${index}-title`)
+      }}<span>{{ $t(`mantra-${index}-red-title`) }}</span>
+      {{ $t(`mantra-${index}-subtitle`) }}
+    </h2>
+    <h2 v-else>
+      {{ $t(`mantra-${index}-title`)
+      }}<span>{{ $t(`mantra-${index}-subtitle`) }}</span>
+    </h2>
+    <MantraControls
+      is-small
+      @on-next="() => nextSlide()"
+      @on-prev="() => prevSlide()"
+    />
   </div>
 </template>
 
+<script>
+export default {
+  name: "MantraHeader",
+  props: {
+    currentSlide: {
+      type: Number,
+      default: 0,
+    },
+    index: {
+      type: Number,
+      default: 0,
+    },
+    slide: {
+      type: Object,
+      default: () => {},
+    },
+    reverseTitle: {
+      type: Boolean,
+      default: false,
+    },
+    redMiddleTitle: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  setup(props, { emit }) {
+    const nextSlide = () => {
+      emit("onNext");
+    };
+
+    const prevSlide = () => {
+      emit("onPrev");
+    };
+
+    return { nextSlide, prevSlide };
+  },
+};
+</script>
+
 <style lang="scss" scoped>
+#mantraHeader {
+  scroll-margin-top: 120px;
+}
 .mantraHeader {
   padding: 0 72px;
   display: flex;
@@ -125,10 +76,11 @@
   max-height: 100vh;
   position: relative;
   margin-bottom: 0;
+  margin: 230px 0 0px 0;
 
   @include above(small) {
     padding: 0 160px;
-    margin-bottom: 360px;
+    margin: 230px 0 360px 0;
   }
 
   &:after {
@@ -230,10 +182,13 @@
     line-height: 28px;
     margin: 16px auto 56px auto;
     text-align: center;
+    font-weight: 100;
+    font-style: italic;
 
     @include above(small) {
       font-size: 73px;
       line-height: 60px;
+      max-width: 820px;
     }
 
     span {

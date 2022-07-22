@@ -5,7 +5,9 @@
         <li class="mobileLink"><a href="">email</a></li>
         <li class="desktopLink"><a href="">facebook</a></li>
         <li><a href="">instagram</a></li>
-        <li class="desktopLink"><a href="">mentions légales</a></li>
+        <li class="desktopLink">
+          <NuxtLink to="mentions-legales">{{ $t("footer-legal") }}</NuxtLink>
+        </li>
       </ul>
       <p>© 2022 ronan by clinet</p>
     </div>
@@ -19,11 +21,7 @@ footer {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding: 40px 104px 50px 104px;
-
-  @include above(big) {
-    padding: 40px 96px 50px 96px;
-  }
+  padding: 40px 96px 50px 96px;
 
   .footer {
     position: relative;

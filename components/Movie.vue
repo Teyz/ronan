@@ -23,6 +23,7 @@
     left: 50%;
     transform: translateX(-50%);
     top: -20%;
+    z-index: 11;
 
     @include above(big) {
       top: -5%;
