@@ -3,13 +3,13 @@
     <div></div>
     <div class="main">
       <div class="languageRoot">
-        <span>FR</span>
-        <span> / </span>
-        <span>EN</span>
+        <span @click="changeLang('fr')" :class="{ isFrenchActive, lang: 'lang' }">FR</span>
+        <span> | </span>
+        <span @click="changeLang('en')" :class="{ isEnglishActive , lang: 'lang' }">EN</span>
       </div>
       <ul class="nav">
-        <li><a href="#movie">Film</a></li>
-        <li><a href="#mantras">Mantras</a></li>
+        <!-- <li><a href="#movie">Film</a></li> -->
+        <li><a href="#mantraHeader">Mantras</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <ul class="socialLinks">
@@ -27,8 +27,61 @@
 </template>
 
 <script>
+import { useI18n } from "vue-i18n";
 export default {
   name: "MobileMenu",
+    setup() {
+    const showMenu = ref(false);
+    const toggleMenu = () => {
+      showMenu.value = !showMenu.value;
+    };
+
+    const isFrenchActive = ref(true);
+    const isEnglishActive = ref(false);
+
+    const { y } = useWindowScroll();
+
+    const isSticky = ref(false);
+
+    const { locale } = useI18n();
+
+    const router = useRouter();
+
+    const goToHome = () => {
+      router.push({ path: "/" });
+    };
+
+    const changeLang = (lang) => {
+      if (lang === "en") {
+        isEnglishActive.value = true;
+        isFrenchActive.value = false;
+      } else {
+        isEnglishActive.value = false;
+        isFrenchActive.value = true;
+      }
+      locale.value = lang;
+    };
+
+    watch(y, (newValue) => {
+      if (newValue > 110) {
+        isSticky.value = true;
+      }
+      if (newValue < 110) {
+        isSticky.value = false;
+      }
+    });
+
+    return {
+      showMenu,
+      toggleMenu,
+      y,
+      isSticky,
+      changeLang,
+      isFrenchActive,
+      isEnglishActive,
+      goToHome,
+    };
+  },
 };
 </script>
 

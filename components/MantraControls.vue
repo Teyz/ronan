@@ -47,11 +47,10 @@
             </g>
           </g>
         </g>
-      </svg>
-      {{ $t("next") }}
+      </svg>  {{ $t("prev") }}
     </div>
     <div @click="nextSlide">
-      {{ $t("prev") }}
+      {{ $t("next") }}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20.479"
@@ -147,17 +146,17 @@ export default {
 <style lang="scss" scoped>
 .mantraControlsRoot {
   padding: 0 48px;
-  margin: 42px auto 160px auto;
+  margin: 42px auto 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   @include above(big) {
-    padding: 0 160px;
+    padding: 0 200px;
   }
 
   &.isSmall {
-    max-width: 300px;
+    max-width: 200px;
     width: 100%;
     padding: 0;
   }
@@ -167,6 +166,9 @@ export default {
     color: #00000029;
     transition: all 0.5s ease;
     cursor: pointer;
+    font-size: 18px;
+    font-weight: 100;
+    font-family: "SchnyderS";
 
     &:hover {
       color: #260f01;

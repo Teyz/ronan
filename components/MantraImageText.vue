@@ -98,7 +98,7 @@ export default {
       bottom: 15%;
 
       @include above(big) {
-        bottom: -10%;
+        bottom: 0%;
         height: 140px;
         right: 30%;
         position: absolute;
@@ -107,13 +107,15 @@ export default {
 
     p {
       max-width: 300px;
-      font-size: 16px;
+      font-size: 20px;
       padding: 0 24px;
-      margin: 88px auto 208px auto;
+      text-align: left;
+      margin: 102px auto 240px auto;
 
       @include above(big) {
         padding: 0;
-        font-size: 22px;
+        font-size: 28px;
+        line-height: 35px;
         max-width: 435px;
         margin: 88px 0 0 0;
         text-align: left;
@@ -128,7 +130,7 @@ export default {
       max-width: 320px;
       text-align: center;
       margin: 0 auto;
-      -webkit-text-stroke: 1px #ae0721;
+      -webkit-text-stroke: 0.5px #ae0721;
 
       @include above(big) {
         text-align: left;
@@ -173,7 +175,7 @@ export default {
       line-height: 26px;
       max-width: 325px;
       margin: 0 auto;
-      text-align: center;
+      text-align: left;
       padding: 48px 0 208px 0;
       color: #b71616;
       font-weight: 100;
@@ -184,7 +186,6 @@ export default {
         font-size: 32px;
         line-height: 38px;
         max-width: 497px;
-        margin-right: 56px;
         padding: 0;
       }
     }

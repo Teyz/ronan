@@ -1,5 +1,5 @@
 <template>
-  <div class="mantraContentRoot">
+  <div class="mantraContentRoot" :class="{ isReverse }">
     <div class="firstBlock">
       <div class="headerImage">
         <img
@@ -46,6 +46,15 @@ export default {
   @include above(big) {
     padding: 0 160px;
   }
+
+    &.isReverse{
+      .headerImage {
+         &:after {
+           right: 10%;
+           left: inherit;
+         }
+      }
+    }
   .headerImage {
     position: relative;
 
@@ -59,8 +68,8 @@ export default {
       bottom: -30%;
 
       @include above(big) {
-        height: 260px;
-        bottom: -40%;
+        height: 220px;
+        bottom: -30%;
       }
     }
   }
@@ -103,13 +112,15 @@ export default {
     }
 
     p {
-      margin: 112px auto 104px auto;
+      margin: 128px auto 104px auto;
       max-width: 300px;
+      font-size: 20px;
+      line-height: 28px;
+      text-align: left;
 
       @include above(big) {
-        text-align: left;
         margin: 0;
-        max-width: 350px;
+        max-width: 400px;
       }
     }
 
@@ -126,7 +137,7 @@ export default {
       line-height: 34px;
       font-family: "Sebastian";
       max-width: 250px;
-      -webkit-text-stroke: 1px #ae0721;
+      -webkit-text-stroke: 0.5px #ae0721;
 
       @include above(big) {
         bottom: -30%;

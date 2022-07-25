@@ -64,23 +64,21 @@ export default {
 
 <style lang="scss" scoped>
 #mantraHeader {
-  scroll-margin-top: 120px;
+  scroll-margin-top: 190px;
 }
 .mantraHeader {
-  padding: 0 72px;
+  padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100vh;
-  max-height: 100vh;
   position: relative;
   margin-bottom: 0;
-  margin: 230px 0 0px 0;
+  margin: 160px 0 148px 0;
 
   @include above(small) {
     padding: 0 160px;
-    margin: 230px 0 360px 0;
+    margin: 300px 0 360px 0;
   }
 
   &:after {
@@ -94,7 +92,7 @@ export default {
     display: none;
 
     @include above(big) {
-      bottom: -30%;
+      bottom: -65%;
       height: 180px;
       display: block;
     }
@@ -188,7 +186,7 @@ export default {
     @include above(small) {
       font-size: 73px;
       line-height: 60px;
-      max-width: 820px;
+      max-width: 100%;
     }
 
     span {

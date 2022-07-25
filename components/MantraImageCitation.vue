@@ -16,8 +16,14 @@
     <div class="mantraCitation" :class="{ isReverse }">
       <div class="textCitation">
         <h3>{{ $t(`mantra-${index}-image-citation-citation-1`) }}</h3>
+        <img
+          :src="slide?.images?.mantra_image_citation_4"
+          alt=""
+          class="largeImage"
+          v-if="isLastBlock"
+        />
         <p>
-          {{ $t(`mantra-${index}-image-citation-text-2`) }}
+          {{ $t(`mantra-${index}-image-citation-text-3`) }}
         </p>
       </div>
       <div class="textImage">
@@ -34,7 +40,7 @@
     <img
       :src="slide?.images?.mantra_image_citation_4"
       alt=""
-      class="largeImage"
+      class="largeImage lastImage"
       v-if="isLastBlock"
     />
   </div>
@@ -69,6 +75,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.lastImage{
+    display: none;
+
+    @include above(big){
+      display: block;
+    }
+  }
 .mantraImageCitationRoot {
   @include above(big) {
     padding: 0 160px;
@@ -107,8 +121,8 @@ export default {
         font-size: 32px;
         line-height: 38px;
         max-width: 497px;
-        margin-right: 56px;
         padding: 0;
+        text-align: left;
       }
     }
   }
@@ -126,10 +140,41 @@ export default {
 }
 
 .mantraCitation {
-  margin-top: 208px;
+  margin-top: 72px;
   display: flex;
+  flex-direction: column-reverse;
   align-items: flex-start;
   justify-content: space-between;
+  padding: 0 38px;
+
+  @include above(big){
+    margin-top: 208px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .textCitation{
+
+    h3{
+      margin-bottom: 64px;
+    }
+
+    p{
+      margin-top: 72px;
+    }
+
+    @include above(big){
+
+      img{
+        display: none;
+    }
+      p{
+      margin-top: 0px;
+    }
+    }
+  }
 
   h3 {
     color: #ae0721;
@@ -139,7 +184,7 @@ export default {
     max-width: 320px;
     position: relative;
     margin: 0 auto;
-    -webkit-text-stroke: 1px #ae0721;
+    -webkit-text-stroke: 0.5px #ae0721;
 
     &:after {
       content: "";
@@ -149,15 +194,17 @@ export default {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      top: 0%;
+      bottom: 150%;
 
       @include above(big) {
         height: 173px;
+        top: 0%;
+        bottom: inherit;
       }
     }
 
     @include above(big) {
-      margin: 0 0 120px 0;
+      margin: 0 0 88px 0;
       padding-top: 240px;
       font-size: 73px;
       line-height: 53px;
@@ -169,11 +216,18 @@ export default {
     flex-direction: row-reverse;
   }
   p {
-    font-size: 28px;
+    font-size: 16px;
     font-weight: 100;
-    line-height: 35px;
-    max-width: 530px;
+    line-height: 18px;
+    max-width: 300px;
     text-align: left;
+
+    @include above(big){
+      font-size: 28px;
+      font-weight: 100;
+      line-height: 35px;
+      max-width: 530px;
+    }
   }
 
   .textImage {
@@ -184,10 +238,20 @@ export default {
     img {
       max-width: 100%;
       object-fit: cover;
+      display: none;
 
       @include above(big) {
+        display: block;
         margin-top: 200px;
         max-width: 430px;
+      }
+    }
+
+    p{
+      margin-bottom: 235px;
+      @include above(big){
+        margin-right: 32px;
+        margin-bottom: 0;
       }
     }
   }

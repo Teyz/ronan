@@ -132,6 +132,7 @@ export default {
     opacity: 0;
   }
 
+
   @keyframes slideRightLeft {
     from {
       transform: translateX(100%);

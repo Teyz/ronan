@@ -9,7 +9,7 @@
         >{{ $t("subtitle4") }}<span>{{ $t("subtitle5") }}</span>
       </h1>
       <h1 v-else>
-        {{ $t("title") }}<span>{{ $t("subtitle") }}</span
+        {{ $t("title") }}<span>{{ $t("subtitle") }},</span
         ><br />
         {{ $t("subtitle2") }}<span>{{ $t("subtitle3") }}</span>
       </h1>
@@ -36,11 +36,6 @@ export default {
 .heroRoot {
   height: 100%;
   position: relative;
-  background: url("@/assets/img/texture.webp") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   overflow: hidden;
   width: 100%;
   z-index: 2;
@@ -48,7 +43,7 @@ export default {
   &:before {
     content: "";
     background-image: url("@/assets/img/soleil.png");
-    background-size: cover;
+    background-size: contain;
     position: absolute;
     left: -9%;
     top: 15%;
@@ -57,17 +52,24 @@ export default {
     background-repeat: no-repeat;
 
     @include above(big) {
-      left: -12%;
+      left: -9%;
       top: 12%;
-      width: 450px;
-      height: 355px;
+      width: 322px;
+      height: 258px;
+    }
+
+    @include above(large) {
+      left: -10%;
+      top: 12%;
+      width: 441px;
+      height: 354px;
     }
   }
 
   &:after {
     content: "";
     background-image: url("@/assets/img/Avion.png");
-    background-size: cover;
+    background-size: contain;
     position: absolute;
     right: -2%;
     top: 18%;
@@ -76,24 +78,32 @@ export default {
     background-repeat: no-repeat;
 
     @include above(big) {
-      right: -5%;
-      top: 35%;
-      width: 400px;
+      right: -8%;
+      top: 25%;
+      width: 386px;
+      height: 236px;
+    }
+
+    @include above(large) {
+      right: -12%;
+      top: 25%;
+      width: 531px;
       height: 324px;
     }
   }
-
+  
   .container {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    position: relative;
 
     padding-bottom: 56px;
 
     @include above(big) {
-      padding-bottom: 8px;
+      padding-bottom: 32px;
     }
   }
 
@@ -103,7 +113,7 @@ export default {
     width: 100%;
 
     @include above(big) {
-      max-width: 200px;
+      max-width: 152px;
     }
   }
 
@@ -115,13 +125,13 @@ export default {
     @include above(small) {
       font-size: 60px;
       line-height: 59px;
-      margin-top: 40px;
+      margin-top: 32px;
     }
 
     @include above(large) {
       font-size: 81px;
       line-height: 72px;
-      margin-top: 72px;
+      margin-top: 64px;
     }
 
     font-family: "SchnyderS";
@@ -145,7 +155,7 @@ export default {
     text-decoration: none;
     text-align: center;
     margin-top: 32px;
-    margin-bottom: 104px;
+    margin-bottom: 112px;
 
     &:after {
       content: "";

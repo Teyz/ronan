@@ -59,9 +59,9 @@ export default {
     font-weight: 100;
 
     @include above(big) {
-      max-width: 815px;
-      font-size: 32px;
-      line-height: 42px;
+      max-width: 1054px;
+      font-size: 40px;
+      line-height: 45px;
     }
   }
 }

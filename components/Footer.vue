@@ -16,11 +16,6 @@
 
 <style lang="scss" scoped>
 footer {
-  background: url("@/assets/img/texture.webp") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   padding: 40px 96px 50px 96px;
 
   .footer {
@@ -53,6 +48,7 @@ footer {
 
     li {
       margin: 0 12px;
+      font-size: 16px;
 
       &.desktopLink {
         display: none;
@@ -71,7 +67,7 @@ footer {
       }
 
       a {
-        font-size: 12px;
+        font-size: 16px;
         font-family: "SchnyderS";
         font-weight: 100;
         line-height: 18px;

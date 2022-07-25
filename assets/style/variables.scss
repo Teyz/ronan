@@ -3,19 +3,24 @@ $secondary: #b71616;
 
 @mixin above($arg) {
   $width: "";
-  @if $arg == "xsmall" {
+
+  @if $arg=="xsmall" {
     $width: 540px;
   }
-  @if $arg == "small" {
+
+  @if $arg=="small" {
     $width: 720px;
   }
-  @if $arg == "medium" {
+
+  @if $arg=="medium" {
     $width: 940px;
   }
-  @if $arg == "big" {
+
+  @if $arg=="big" {
     $width: 1200px;
   }
-  @if $arg == "large" {
+
+  @if $arg=="large" {
     $width: 1441px;
   }
 
@@ -27,7 +32,7 @@ $secondary: #b71616;
 @mixin typo-text-footer {
   color: #260f01;
   font-family: "1942";
-  font-size: 18px;
+  font-size: 16px;
   line-height: 18px;
 }
 

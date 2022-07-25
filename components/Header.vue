@@ -6,7 +6,7 @@
     <header :class="{ isSticky }">
       <div class="container">
         <ul class="nav">
-          <li><a href="#movie">Film</a></li>
+          <!-- <li><a href="#movie">Film</a></li> -->
           <li><a href="#mantraHeader">Mantras</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -23,9 +23,9 @@
           @click="goToHome"
         />
         <div class="languageRoot">
-          <span @click="changeLang('fr')" :class="{ isFrenchActive }">FR</span>
-          <span> / </span>
-          <span @click="changeLang('en')" :class="{ isEnglishActive }">EN</span>
+          <span @click="changeLang('fr')" :class="{ isFrenchActive, lang: 'lang' }">FR</span>
+          <span> | </span>
+          <span @click="changeLang('en')" :class="{ isEnglishActive , lang: 'lang' }">EN</span>
         </div>
         <div class="menu-icon">
           <input
@@ -200,7 +200,12 @@ header {
       text-transform: uppercase;
       cursor: pointer;
 
-      &:hover,
+      &.lang{
+        &:hover{
+        color: $secondary;
+        }
+      }
+      
       &.isEnglishActive,
       &.isFrenchActive {
         color: $secondary;
@@ -220,7 +225,7 @@ header {
     }
 
     li {
-      margin: 0 14px;
+      margin: 0 24px;
 
       &:hover {
         color: $secondary;
@@ -230,7 +235,7 @@ header {
         font-family: "SchnyderS";
         font-weight: 100;
         font-size: 14px;
-        letter-spacing: 2px;
+        letter-spacing: 3px;
         line-height: 20px;
         text-transform: uppercase;
       }

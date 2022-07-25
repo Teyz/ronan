@@ -1,18 +1,18 @@
 <template>
   <div class="movieRoot">
-    <video controls width="1156" id="movie">
+    <!-- <video controls width="1156" id="movie">
       <source src="https://vimeo.com/369521302" />
-    </video>
+    </video> -->
   </div>
 </template>
 
 <style lang="scss" scoped>
 .movieRoot {
-  padding: 104px 24px;
+   padding: 24px 0 0 0 ;
 
-  @include above(big) {
-    padding: 200px 142px;
-  }
+  // @include above(big) {
+  //   padding: 200px 142px;
+  // }
   position: relative;
   &:before {
     content: "";
@@ -22,30 +22,30 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: -20%;
+    top: -150%;
     z-index: 11;
 
     @include above(big) {
-      top: -5%;
-      height: 180px;
+      top: -90%;
+      height: 250px;
     }
   }
 
-  &:after {
-    content: "";
-    width: 1px;
-    height: 135px;
-    background-color: $secondary;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -20%;
+  // &:after {
+  //   content: "";
+  //   width: 1px;
+  //   height: 135px;
+  //   background-color: $secondary;
+  //   position: absolute;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  //   bottom: -20%;
 
-    @include above(big) {
-      bottom: -5%;
-      height: 180px;
-    }
-  }
+  //   @include above(big) {
+  //     bottom: -5%;
+  //     height: 180px;
+  //   }
+  // }
 
   video {
     width: 100%;
