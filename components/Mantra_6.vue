@@ -48,4 +48,10 @@ export default {
 .mantraSimpleTextRoot {
   padding-top: 144px;
 }
+
+.textCitation{
+  h3{
+    padding-top: 360px !important;
+  }
+}
 </style>

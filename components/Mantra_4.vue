@@ -48,7 +48,11 @@ export default {
 
 <style lang="scss" scoped>
 .mantraHeader {
-  margin-bottom: 0px;
+  margin-bottom: 0;
+
+  @include above(big){
+    margin-bottom: 120px;
+  }
 }
 .mantraSimpleTextRoot {
   padding-top: 144px;

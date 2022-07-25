@@ -151,6 +151,12 @@ export default {
         line-height: 20px;
         text-align: left;
         max-width: 410px;
+        -webkit-text-stroke: inherit;
+        padding: 0 24px;
+
+        @include above(big){
+          padding: 0;
+        }
       }
     }
   }

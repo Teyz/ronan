@@ -80,6 +80,7 @@ export default {
     display: none;
 
     @include above(big){
+      margin-top: 72px;
       display: block;
     }
   }

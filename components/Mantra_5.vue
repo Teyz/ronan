@@ -62,4 +62,13 @@ export default {
 .mantraSimpleTextRoot {
   padding-top: 144px;
 }
+
+.mantraImageCitationRoot{
+  .lastImage{
+    @include above(big){
+      margin-top: 72px;
+    }
+  }
+
+}
 </style>
