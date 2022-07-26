@@ -94,6 +94,8 @@ export default {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-color: $primary;
+  z-index: 19;
 
   display: flex;
   flex-direction: column;
@@ -101,6 +103,10 @@ export default {
   justify-content: space-between;
 
   padding: 44px 30px 30px 30px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
 
   a {
     font-family: "SchnyderS";

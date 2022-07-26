@@ -25,3 +25,20 @@ body {
     height: 100%;
   }
 }
+
+.slidedown-enter-active,
+.slidedown-leave-active {
+  transition: all 0.3s ease;
+}
+
+.slidedown-enter-to,
+.slidedown-leave-from {
+  overflow: hidden;
+  transform: translateY(0);
+}
+
+.slidedown-enter-from,
+.slidedown-leave-to {
+  overflow: hidden;
+  transform: translateY(-100%);
+}

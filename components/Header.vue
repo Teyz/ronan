@@ -1,8 +1,8 @@
 <template>
   <div class="headerRoot">
-    <slide-up-down v-model="showMenu" :duration="1000">
-      <MobileMenu />
-    </slide-up-down>
+    <Transition name="slidedown">
+       <MobileMenu v-if="showMenu"/>
+    </Transition>
     <header :class="{ isSticky }">
       <div class="container">
         <ul class="nav">
@@ -46,10 +46,8 @@
 <script>
 import { useWindowScroll } from "@vueuse/core";
 import { useI18n } from "vue-i18n";
-import SlideUpDown from "vue3-slide-up-down";
 export default {
   name: "Header",
-  components: { SlideUpDown },
   setup() {
     const showMenu = ref(false);
     const toggleMenu = () => {
