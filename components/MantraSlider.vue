@@ -70,10 +70,8 @@ export default {
 
     const goToSlide = (goToSlideNumber) => {
       addAnimationRightLeft();
-      setTimeout(() => {
-        slider.value.slideTo(goToSlideNumber);
-        slider.value.updateSlideWidth();
-      }, 1000);
+      slider.value.slideTo(goToSlideNumber);
+      slider.value.updateSlideWidth();
     };
 
     const nextSlide = () => {
