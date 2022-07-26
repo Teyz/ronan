@@ -3,7 +3,8 @@ import { acceptHMRUpdate, defineStore } from 'pinia'
 export const useStore = defineStore('store', {
   state: () => ({
     showBackToHeader: false,
-    mantraSize: 5905
+    mantraSize: 5905,
+    showMenu: false
   }),
 
   actions: {
@@ -12,6 +13,9 @@ export const useStore = defineStore('store', {
     },
     setMantraSize(value) {
       this.mantraSize = value
+    },
+    setShowMenu(value) {
+      this.showMenu = value
     },
   },
 })

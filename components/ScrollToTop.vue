@@ -16,7 +16,7 @@ const store = useStore()
 <style lang="scss" scoped>
 img {
   position: fixed;
-  right: 72px;
+  right: 24px;
   bottom: 5%;
   transform: rotate(180deg);
   cursor: pointer;
@@ -24,6 +24,10 @@ img {
   z-index: 1;
   height: 47px;
   width: 20px;
+
+  @include above(small){
+     right: 72px;
+  }
 
   &:hover {
     bottom: 6%;

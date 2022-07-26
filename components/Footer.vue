@@ -45,12 +45,12 @@ export default {
 
 <style lang="scss" scoped>
 footer {
-  padding: 40px 96px 50px 96px;
+  padding: 40px 72px 50px 72px;
 
   .footer {
     position: relative;
 
-    @include above(big) {
+    @include above(small) {
       display: flex;
       align-items: center;
       justify-content: space-between;

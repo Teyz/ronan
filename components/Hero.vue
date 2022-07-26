@@ -51,7 +51,14 @@ export default {
     height: 146px;
     background-repeat: no-repeat;
 
-    @include above(big) {
+    @include above(small) {
+      left: -15%;
+      top: 12%;
+      width: 322px;
+      height: 258px;
+    }
+
+     @include above(big) {
       left: -9%;
       top: 12%;
       width: 322px;
@@ -76,6 +83,13 @@ export default {
     width: 237px;
     height: 146px;
     background-repeat: no-repeat;
+
+    @include above(small) {
+      right: -15%;
+      top: 25%;
+      width: 386px;
+      height: 236px;
+    }
 
     @include above(big) {
       right: -8%;
