@@ -1,5 +1,5 @@
 <template>
-  <div class="mantraSliderRoot" :class="{ animateRightLeft, animateLeftRight }">
+  <div class="mantraSliderRoot" :class="{ animateRightLeft, animateLeftRight }" ref="showBackTopHeader">
     <Carousel
       ref="slider"
       :mouseDrag="false"
@@ -31,6 +31,7 @@ import Mantra_3 from "./Mantra_3.vue";
 import Mantra_4 from "./Mantra_4.vue";
 import Mantra_5 from "./Mantra_5.vue";
 import Mantra_6 from "./Mantra_6.vue";
+import { useStore } from "@/stores/store";
 
 export default {
   name: "MantraSlider",
@@ -86,6 +87,18 @@ export default {
       slider.value.prev();
       slider.value.updateSlideWidth();
     };
+
+    const showBackTopHeader = ref(null);
+
+    const store = useStore()
+
+    const { stop } = useIntersectionObserver(
+      showBackTopHeader,
+      ([{ isIntersecting }], observerElement) => {
+        store.setShowBackToHeader(isIntersecting);
+      },
+    )
+
     return {
       slider,
       nextSlide,
@@ -95,6 +108,7 @@ export default {
       prevSlide,
       slides,
       goToSlide,
+      showBackTopHeader
     };
   },
 };

@@ -45,9 +45,9 @@ export default {
     background-image: url("@/assets/img/soleil.png");
     background-size: contain;
     position: absolute;
-    left: -9%;
+    left: -15%;
     top: 15%;
-    width: 200px;
+    width: 182px;
     height: 146px;
     background-repeat: no-repeat;
 
@@ -71,9 +71,9 @@ export default {
     background-image: url("@/assets/img/Avion.png");
     background-size: contain;
     position: absolute;
-    right: -2%;
+    right: -22%;
     top: 18%;
-    width: 160px;
+    width: 237px;
     height: 146px;
     background-repeat: no-repeat;
 

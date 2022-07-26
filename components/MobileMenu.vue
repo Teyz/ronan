@@ -13,12 +13,12 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <ul class="socialLinks">
-        <li><a href="">facebook</a></li>
-        <li><a href="">instagram</a></li>
+        <li><a href="https://www.facebook.com/Ronan-By-Clinet-173378592719286">facebook</a></li>
+        <li><a href="https://www.instagram.com/ronanbyclinet/">instagram</a></li>
       </ul>
     </div>
     <div class="footerContainer">
-      <a href="">mentions légales</a>
+      <NuxtLink to="mentions-legales">{{ $t("footer-legal") }}</NuxtLink>
       <div class="footer">
         <p>© 2022 ronan by clinet</p>
       </div>

@@ -202,7 +202,7 @@ export default {
     }
 
     #flecheD {
-      left: 120%;
+      left: 115%;
     }
   }
 }

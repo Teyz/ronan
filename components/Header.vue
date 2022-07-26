@@ -134,6 +134,7 @@ header {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background-color: $primary;
 
     .logoMobile {
       cursor: pointer;

@@ -37,6 +37,7 @@ export default {
   -o-background-size: cover;
   background-size: cover;
   position: fixed;
+  background-color: $primary;
   top: 0;
   right: 0;
   z-index: 1000;

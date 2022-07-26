@@ -14,6 +14,20 @@ export default defineNuxtConfig({
     },
   },
   modules: ["@vueuse/nuxt", "@intlify/nuxt3"],
+  buildModules: [
+    // ...
+    [
+      '@pinia/nuxt',
+      {
+        autoImports: [
+          // automatically imports `usePinia()`
+          'defineStore',
+          // automatically imports `usePinia()` as `usePiniaStore()`
+          ['defineStore', 'definePiniaStore'],
+        ],
+      },
+    ],
+  ],
   intlify: {
     localeDir: "lang",
     vueI18n: {
@@ -39,26 +53,32 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Ronan by Clinet | Coming Soony",
+      title: "Ronan by Clinet | Vins AOC de Bordeaux",
       htmlAttrs: {
         lang: "fr,en",
       },
       meta: [
         {
           name: "title",
-          content: "Ronan by Clinet | Pomerol",
+          lang: "fr",
+          content: "Ronan by Clinet | Vins AOC de Bordeaux",
+        },
+        {
+          name: "title",
+          lang: 'en',
+          content: "Ronan by Clinet | Bordeaux AOC Wines",
         },
         {
           name: "description",
           lang: "fr",
           content:
-            "Ronan by Clinet est un Bordeaux séduisant et précis, produit par le Château Clinet, Grand Cru historique, main dans la main avec des viticulteurs partenaires consciencieux.",
+            "Ronan by Clinet est un vin AOC de Bordeaux séduisant et précis, produit par l’équipe du Château Clinet, Grand Cru historique, main dans la main avec des vignerons partenaires consciencieux.",
         },
         {
           name: "description",
           lang: "en",
           content:
-            "Ronan by Clinet is a new Bordeaux wine that balanced seduction with precision, produce by Château Clinet, an historic Grand Cru, in partnership with conscientious growers.",
+            "Ronan by Clinet is a Bordeaux AOC wine that balances seduction with precision, produced by the team of Château Clinet, an historic Grand Cru, in partnership with conscientious growers.",
         },
         {
           name: "format-detection",

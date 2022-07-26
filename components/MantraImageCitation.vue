@@ -14,6 +14,9 @@
       />
     </div>
     <div class="mantraCitation" :class="{ isReverse }">
+      <img :src="slide?.images?.mantra_image_citation_illus_1" alt="" class="illus1">
+      <img :src="slide?.images?.mantra_image_citation_illus_2" alt="" class="illus2" :class="{secondIllusTop}">
+      <img :src="slide?.images?.mantra_image_citation_illus_3" alt="" class="illus3" v-if="showLastIllus">
       <div class="textCitation">
         <h3>{{ $t(`mantra-${index}-image-citation-citation-1`) }}</h3>
         <img
@@ -63,6 +66,14 @@ export default {
       default: false,
     },
     noSecondSmall: {
+      type: Boolean,
+      default: false,
+    },
+    showLastIllus: {
+      type: Boolean,
+      default: false,
+    },
+    secondIllusTop: {
       type: Boolean,
       default: false,
     },
@@ -147,6 +158,35 @@ export default {
   align-items: flex-start;
   justify-content: space-between;
   padding: 0 38px;
+  position: relative;
+
+  .illus1{
+    position: absolute;
+    left: -18%;
+    top: -10%;
+    width: 200px;
+    object-fit: cover;
+  }
+
+  .illus2{
+    position: absolute;
+    right: -18%;
+    top: 30%;
+    width: 200px;
+    object-fit: cover;
+
+    &.secondIllusTop{
+      top: -200%;
+    }
+  }
+
+  .illus3{
+    position: absolute;
+    right: 0%;
+    top: -25%;
+    width: 89px;
+    object-fit: contain;
+  }
 
   @include above(big){
     margin-top: 208px;
@@ -172,7 +212,7 @@ export default {
         display: none;
     }
       p{
-      margin-top: 0px;
+      margin-top: 104px;
     }
     }
   }
@@ -209,7 +249,7 @@ export default {
       padding-top: 240px;
       font-size: 73px;
       line-height: 53px;
-      max-width: 360px;
+      max-width: 430px;
     }
   }
 

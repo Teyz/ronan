@@ -58,15 +58,14 @@ export default {
   .illustration {
     object-fit: contain;
     width: 100px;
-    height: 100%;
     position: absolute;
-    right: -5%;
-    top: 75%;
+    right: 0%;
+    top: 77%;
 
     @include above(big) {
       width: 200px;
       height: 100%;
-      right: -5%;
+      right: 0%;
       top: 13%;
     }
   }
@@ -116,7 +115,7 @@ export default {
         padding: 0;
         font-size: 28px;
         line-height: 35px;
-        max-width: 435px;
+        max-width: 447px;
         margin: 88px 0 0 0;
         text-align: left;
       }
@@ -133,7 +132,6 @@ export default {
       -webkit-text-stroke: 0.5px #ae0721;
 
       @include above(big) {
-        text-align: left;
         position: absolute;
         font-size: 73px;
         line-height: 53px;

@@ -26,8 +26,8 @@
     z-index: 11;
 
     @include above(big) {
-      top: -90%;
-      height: 250px;
+      top: -200%;
+      height: 280px;
     }
   }
 

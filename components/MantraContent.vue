@@ -14,7 +14,7 @@
         </p>
         <div class="imageContent">
           <img :src="slide.images?.mantra_content_image_2" alt="" />
-          <h3>{{ $t(`mantra-${index}-content-citation`) }}</h3>
+          <h3 :class={isTop} >{{ $t(`mantra-${index}-content-citation`) }}</h3>
         </div>
       </div>
     </div>
@@ -32,6 +32,10 @@ export default {
     index: {
       type: Number,
       default: 1,
+    },
+    isTop: {
+      type: Boolean,
+      default: false,
     },
     isReverse: {
       type: Boolean,
@@ -68,8 +72,8 @@ export default {
       bottom: -30%;
 
       @include above(big) {
-        height: 220px;
-        bottom: -30%;
+        height: 180px;
+        bottom: -20%;
       }
     }
   }
@@ -144,6 +148,10 @@ export default {
         font-size: 73px;
         line-height: 53px;
         max-width: 360px;
+
+        &.isTop{
+          bottom: -15%;
+        }
       }
     }
   }

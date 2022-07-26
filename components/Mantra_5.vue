@@ -14,6 +14,7 @@
       :slide="slide"
       no-second-small
       is-last-block
+      show-last-illus
     />
     <MantraControls @on-next="() => nextSlide()" @on-prev="() => prevSlide()" />
   </div>

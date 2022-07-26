@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import { useIntersectionObserver } from '@vueuse/core';
 export default {
   name: "MantraHeader",
   props: {
@@ -57,7 +58,8 @@ export default {
       emit("onPrev");
     };
 
-    return { nextSlide, prevSlide };
+
+    return { nextSlide, prevSlide};
   },
 };
 </script>
@@ -173,7 +175,7 @@ export default {
 
   h2 {
     margin: 0 auto;
-    max-width: 522px;
+    max-width: 100%;
     font-family: "SchnyderS";
     color: #260f01;
     font-size: 32px;

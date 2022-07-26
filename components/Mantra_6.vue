@@ -7,7 +7,7 @@
       :index="index"
       :slide="slide"
     />
-    <MantraImageCitation is-reverse :slide="slide" :index="index" />
+    <MantraImageCitation is-reverse :slide="slide" :index="index" second-illus-top />
     <MantraSimpleImage :slide="slide" />
     <MantraControls @on-next="() => nextSlide()" @on-prev="() => prevSlide()" />
   </div>

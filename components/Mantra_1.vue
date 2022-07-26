@@ -7,7 +7,7 @@
       :index="index"
       :slide="slide"
     />
-    <MantraContent :slide="slide" :index="index" />
+    <MantraContent :slide="slide" :index="index" is-top/>
     <MantraSimpleText :index="index" :slide="slide" />
     <MantraImageText :index="index" :slide="slide" />
     <MantraControls @on-next="() => nextSlide()" @on-prev="() => prevSlide()" />
@@ -44,3 +44,11 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.mantraContentRoot{
+  h3{
+    bottom: 0;
+  }
+}
+</style>

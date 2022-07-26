@@ -26,7 +26,7 @@ export default {
       loading.value = false;
       disableScroll(false);
     }, 2500);
-
+    
     return { loading };
   },
 };

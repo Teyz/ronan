@@ -1,9 +1,9 @@
 <template>
-  <footer>
+  <footer ref="footer">
     <div class="footer">
       <ul>
         <li class="mobileLink"><a href="">email</a></li>
-        <li class="desktopLink"><a href="">facebook</a></li>
+        <li class="desktopLink"><a href="https://www.facebook.com/Ronan-By-Clinet-173378592719286">facebook</a></li>
         <li><a href="">instagram</a></li>
         <li class="desktopLink">
           <NuxtLink to="mentions-legales">{{ $t("footer-legal") }}</NuxtLink>
@@ -13,6 +13,35 @@
     </div>
   </footer>
 </template>
+
+<script>
+import { useStore } from "@/stores/store";
+
+export default {
+  name: "Footer",
+  setup() {
+
+    const footer = ref(null);
+
+    const store = useStore()
+
+    const { stop } = useIntersectionObserver(
+      footer,
+      ([{ isIntersecting }], observerElement) => {
+        if(isIntersecting){
+           store.setShowBackToHeader(false);
+        } else {
+          store.setShowBackToHeader(true);
+        }
+      },
+    )
+
+    return {
+      footer
+    };
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 footer {

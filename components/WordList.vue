@@ -29,7 +29,7 @@ export default {
 <style lang="scss" scoped>
 .wordListRoot {
   max-width: 920px;
-  margin: 0 auto 104px auto;
+  margin: 32px auto 104px auto;
 
   ul {
     display: flex;
