@@ -6,7 +6,9 @@
 
 <script setup>
 const title = ref('Ronan by Clinet | Mentions Légales')
-window.scrollTo(0, 0);
+onMounted(() => {
+  window.scrollTo(0, 0);
+}),
 
 useHead({
   title,

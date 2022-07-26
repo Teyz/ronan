@@ -72,6 +72,8 @@ export default {
     };
 
     const changeLang = (lang) => {
+      const hero = document.getElementById("hero");
+      hero.scrollIntoView();
       if (lang === "en") {
         isEnglishActive.value = true;
         isFrenchActive.value = false;

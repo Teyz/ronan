@@ -14,7 +14,8 @@
         </p>
         <div class="imageContent">
           <img :src="slide.images?.mantra_content_image_2" alt="" />
-          <h3 :class={isTop} >{{ $t(`mantra-${index}-content-citation`) }}</h3>
+          <h3 v-if="lang == 'fr'" :class={isTop} >{{ $t(`mantra-${index}-content-citation`) }}</h3>
+          <h3 v-else :class={isTop} class="en">{{ $t(`mantra-${index}-content-citation`) }}</h3>
         </div>
       </div>
     </div>
@@ -22,6 +23,7 @@
 </template>
 
 <script>
+import { useI18n } from "vue-i18n";
 export default {
   name: "MantraContent",
   props: {
@@ -42,6 +44,13 @@ export default {
       default: false,
     },
   },
+  setup(){
+    const { locale } = useI18n();
+
+    const lang = computed(() => locale.value);
+
+    return { locale, lang }
+  }
 };
 </script>
 
@@ -107,8 +116,8 @@ export default {
     }
 
     img {
-      max-width: 100%;
       object-fit: cover;
+      max-width: 100%;
 
       @include above(big) {
         max-width: 640px;
@@ -123,6 +132,13 @@ export default {
       text-align: left;
 
       @include above(big) {
+        font-size: 18px;
+        margin: 0;
+        max-width: 300px;
+      }
+
+      @include above(large) {
+        font-size: 20px;
         margin: 0;
         max-width: 400px;
       }
@@ -151,6 +167,10 @@ export default {
 
         &.isTop{
           bottom: -15%;
+
+          &.en{
+             bottom: -30%;
+          }
         }
       }
     }
