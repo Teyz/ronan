@@ -5,6 +5,7 @@
       :mouseDrag="false"
       :touchDrag="false"
       :transition="1000"
+      :style="`height: ${store.$state.mantraSize}px`"
     >
       <slide v-for="(slide, key) in slides" :key="key">
         <component
@@ -101,11 +102,6 @@ export default {
       },
     )
 
-    const mantraRoot = ref(null);
-    // onMounted(() => {
-    //   const { height } = useElementSize(mantraRoot);
-    // });
-
     return {
       slider,
       nextSlide,
@@ -116,8 +112,7 @@ export default {
       slides,
       goToSlide,
       showBackTopHeader,
-      store,
-      mantraRoot
+      store
     };
   },
 };

@@ -1,5 +1,5 @@
 <template>
-  <div class="mantraRoot">
+  <div class="mantraRoot" ref="el">
     <MantraHeader
       v-bind:currentSlide="currentSlide"
       @on-next="() => nextSlide()"
@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import { useResizeObserver, useIntersectionObserver } from '@vueuse/core'
+import { useStore } from "@/stores/store";
 export default {
   name: "Mantra_6",
   props: {
@@ -31,6 +33,26 @@ export default {
     },
   },
   setup(props, { emit }) {
+    const el = ref(null)
+    const mantraSize = ref();
+    const store = useStore()
+
+    const { stop } = useIntersectionObserver(
+      el,
+      ([{ isIntersecting }], observerElement) => {
+        console.log(isIntersecting);
+        if(isIntersecting){
+          store.setMantraSize(mantraSize.value);
+        }
+
+      },
+    )
+
+    useResizeObserver(el, (entries) => {
+      const entry = entries[0]
+      const { height } = entry.contentRect
+      mantraSize.value = height;
+    })
     const nextSlide = () => {
       emit("onNext");
     };
@@ -39,7 +61,7 @@ export default {
       emit("onPrev");
     };
 
-    return { nextSlide, prevSlide };
+    return { nextSlide, prevSlide, el };
   },
 };
 </script>
