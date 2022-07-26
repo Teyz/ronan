@@ -163,17 +163,27 @@ export default {
   .illus1{
     position: absolute;
     left: -18%;
-    top: -10%;
+    top: 10%;
     width: 200px;
     object-fit: cover;
+
+    @include above(big){
+      left: -18%;
+      top: -10%;
+    }
   }
 
   .illus2{
     position: absolute;
+    right: 0%;
+    top: 37%;
+    width: 150px;
+    object-fit: cover;
+
+     @include above(big){
     right: -18%;
     top: 30%;
-    width: 200px;
-    object-fit: cover;
+    }
 
     &.secondIllusTop{
       top: -200%;
@@ -181,11 +191,15 @@ export default {
   }
 
   .illus3{
+    display: none;
+
+    @include above(big){
     position: absolute;
     right: 0%;
     top: -25%;
     width: 89px;
     object-fit: contain;
+    }
   }
 
   @include above(big){
@@ -199,7 +213,7 @@ export default {
   .textCitation{
 
     h3{
-      margin-bottom: 64px;
+      margin-bottom: 254px;
     }
 
     p{

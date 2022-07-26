@@ -5,7 +5,6 @@
       :mouseDrag="false"
       :touchDrag="false"
       :transition="1000"
-      :wrapAround="true"
     >
       <slide v-for="(slide, key) in slides" :key="key">
         <component

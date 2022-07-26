@@ -186,9 +186,9 @@ export default {
     font-style: italic;
 
     @include above(small) {
-      font-size: 73px;
+      font-size: 65px;
       line-height: 60px;
-      max-width: 100%;
+      max-width: 80%;
     }
 
     span {

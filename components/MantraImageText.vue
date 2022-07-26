@@ -135,7 +135,7 @@ export default {
         position: absolute;
         font-size: 73px;
         line-height: 53px;
-        right: 13%;
+        right: 14%;
         max-width: 360px;
         bottom: -30%;
       }

@@ -53,10 +53,10 @@ export default {
 
     &.isReverse{
       .headerImage {
-         &:after {
-           right: 10%;
-           left: inherit;
-         }
+        &:after {
+          right: 30%;
+          left: inherit;
+        }
       }
     }
   .headerImage {
