@@ -41,8 +41,9 @@ export default {
     object-fit: contain;
     width: 150px;
     position: absolute;
-    left: -10%;
+    left: 10%;
     top: 12%;
+    z-index: 10;
 
     @include above(big) {
       left: -5%;
