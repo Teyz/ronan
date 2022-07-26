@@ -53,6 +53,13 @@ export default {
 
   @include above(big){
     background: url("@/assets/img/texture.webp") no-repeat center center fixed;
+      -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    background-color: $primary;
+    height: 100vh;
+    width: 100vw;
   }
 
   .loaderAnimationContainer {
