@@ -102,7 +102,7 @@ export default defineNuxtConfig({
         {
           hid: "t-type",
           name: "twitter:title",
-          content: "Ronan by Clinet | Pomerol",
+          content: "Ronan by Clinet | Bordeaux AOC Wines",
         },
         {
           hid: "t-type",
