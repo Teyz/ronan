@@ -188,7 +188,7 @@ export default {
     @include above(small) {
       font-size: 65px;
       line-height: 60px;
-      max-width: 80%;
+      max-width: 75%;
     }
 
     span {
