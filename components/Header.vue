@@ -127,12 +127,16 @@ header {
     transition: all 0.5s ease;
     animation: smoothScroll 0.5s forwards;
     position: fixed;
-    background: url("@/assets/img/texture.webp") no-repeat center center fixed;
+    background: url("@/assets/img/textureMobile.webp") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     background-color: $primary;
+
+    @include above(big){
+      background: url("@/assets/img/texture.webp") no-repeat center center fixed;
+    }
 
     .logoMobile {
       cursor: pointer;
