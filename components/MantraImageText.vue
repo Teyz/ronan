@@ -59,8 +59,8 @@ export default {
     object-fit: contain;
     width: 100px;
     position: absolute;
-    right: 0%;
-    top: 65%;
+    right: -10%;
+    top: 78%;
 
     @include above(big) {
       width: 200px;
@@ -158,6 +158,10 @@ export default {
 
         @include above(big){
           padding: 0;
+          margin-left: 24px;
+          left: 60%;
+          width: 100%;
+          bottom: -20%;
         }
       }
     }

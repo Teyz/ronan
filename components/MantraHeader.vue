@@ -19,6 +19,7 @@
       is-small
       @on-next="() => nextSlide()"
       @on-prev="() => prevSlide()"
+      :currentSlide="currentSlide"
     />
   </div>
 </template>

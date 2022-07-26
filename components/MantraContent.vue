@@ -132,7 +132,7 @@ export default {
       text-align: left;
 
       @include above(big) {
-        font-size: 18px;
+        font-size: 16px;
         margin: 0;
         max-width: 300px;
       }
@@ -158,6 +158,14 @@ export default {
       font-family: "Sebastian";
       max-width: 250px;
       -webkit-text-stroke: 0.5px #ae0721;
+
+       &.isTop{
+          bottom: -15%;
+
+           &.en{
+             bottom: -30%;
+          }
+       }
 
       @include above(big) {
         bottom: -30%;

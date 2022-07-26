@@ -1,6 +1,6 @@
 <template>
   <div class="mantraControlsRoot" :class="{ isSmall }">
-    <div @click="prevSlide">
+    <div @click="prevSlide" :class="slide" class="prev">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20.479"
@@ -49,7 +49,7 @@
         </g>
       </svg>  {{ $t("prev") }}
     </div>
-    <div @click="nextSlide">
+    <div @click="nextSlide" :class="slide" class="next">
       {{ $t("next") }}
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -120,8 +120,14 @@ export default {
       type: Object,
       default: () => {},
     },
+    currentSlide: {
+      type: Number,
+      default: 0,
+    },
   },
   setup(props, { emit }) {
+
+    const slide = computed(() => `slide-${props.currentSlide}`);
     const nextSlide = () => {
       const mantraHeader = document.getElementById("mantraHeader");
       mantraHeader.scrollIntoView();
@@ -138,7 +144,7 @@ export default {
       }, 1000);
     };
 
-    return { nextSlide, prevSlide };
+    return { nextSlide, prevSlide, slide };
   },
 };
 </script>
@@ -163,7 +169,6 @@ export default {
 
   div {
     position: relative;
-    color: #00000029;
     transition: all 0.5s ease;
     cursor: pointer;
     font-size: 18px;
@@ -191,10 +196,6 @@ export default {
       transform: translateY(-50%);
       top: 50%;
       transition: all 0.5s ease;
-
-      path {
-        stroke: #cfc9c7;
-      }
     }
 
     #flecheG {
@@ -204,6 +205,39 @@ export default {
     #flecheD {
       left: 115%;
     }
+  }
+}
+
+.prev{
+    color: #260f01;
+    path {
+      stroke: #260f01;
+    }
+  &.slide-0{
+    color: #00000029;
+    path {
+        stroke: #cfc9c7;
+      }
+  }
+}
+
+.next{ 
+  color: #260f01;
+    path {
+      stroke: #260f01;
+    }
+  &.slide-0{
+    color: #260f01;
+    path {
+      stroke: #260f01;
+    }
+  }
+
+  &.slide-5{
+     color: #00000029;
+    path {
+        stroke: #cfc9c7;
+      }
   }
 }
 </style>

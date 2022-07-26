@@ -2,8 +2,7 @@
   <footer ref="footer">
     <div class="footer">
       <ul>
-        <li class="mobileLink"><a href="">email</a></li>
-        <li class="desktopLink"><a href="https://www.facebook.com/Ronan-By-Clinet-173378592719286">facebook</a></li>
+        <li><a href="https://www.facebook.com/Ronan-By-Clinet-173378592719286">facebook</a></li>
         <li><a href="https://www.instagram.com/ronanbyclinet/">instagram</a></li>
         <li class="desktopLink">
           <NuxtLink to="mentions-legales">{{ $t("footer-legal") }}</NuxtLink>

@@ -7,10 +7,10 @@
       :index="index"
       :slide="slide"
     />
-    <MantraContent :slide="slide" :index="index" is-top/>
+    <MantraContent :slide="slide" :index="index" is-top />
     <MantraSimpleText :index="index" :slide="slide" />
     <MantraImageText :index="index" :slide="slide" />
-    <MantraControls @on-next="() => nextSlide()" @on-prev="() => prevSlide()" />
+    <MantraControls @on-next="() => nextSlide()" @on-prev="() => prevSlide()" :currentSlide="currentSlide"/>
   </div>
 </template>
 

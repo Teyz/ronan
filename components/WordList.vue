@@ -40,9 +40,9 @@ export default {
     align-items: center;
     li {
       font-family: "SchnyderS";
-      color: #00000029;
-      font-size: 33px;
-      line-height: 61px;
+      color: #260F01;
+      font-size: 28px;
+      line-height: 52px;
       margin: 0 16px;
       transition: all 0.5s ease;
       cursor: pointer;
@@ -50,7 +50,9 @@ export default {
 
       @include above(big) {
         font-size: 44px;
+        line-height: 61px;
         text-align: left;
+        color: #00000029;
       }
 
       &:hover {

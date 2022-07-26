@@ -45,6 +45,7 @@
       alt=""
       class="largeImage lastImage"
       v-if="isLastBlock"
+      :class="{lastBlockMarginTop}"
     />
   </div>
 </template>
@@ -66,6 +67,10 @@ export default {
       default: false,
     },
     noSecondSmall: {
+      type: Boolean,
+      default: false,
+    },
+    lastBlockMarginTop: {
       type: Boolean,
       default: false,
     },
@@ -166,7 +171,7 @@ export default {
     object-fit: cover;
 
     @include above(big){
-      left: -18%;
+      left: -20%;
       width: 200px;
       top: -10%;
     }
@@ -309,6 +314,12 @@ export default {
         margin-bottom: 0;
       }
     }
+  }
+}
+
+.lastBlockMarginTop{
+  @include above(big){
+    margin-top: 72px;
   }
 }
 </style>

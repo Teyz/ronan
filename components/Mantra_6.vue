@@ -66,13 +66,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.mantraImageCitationRoot{
+  @include above(big){
+    padding-top: 104px;
+  }
+}
 .mantraSimpleTextRoot {
   padding-top: 144px;
-}
-
-.textCitation{
-  h3{
-    padding-top: 360px !important;
-  }
 }
 </style>
