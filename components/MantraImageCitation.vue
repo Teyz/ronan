@@ -91,7 +91,6 @@ export default {
     display: none;
 
     @include above(big){
-      margin-top: 72px;
       display: block;
     }
   }
@@ -212,7 +211,7 @@ export default {
 
   .textCitation{
     h3{
-      margin-bottom: 254px;
+      margin-bottom: 140px;
     }
 
     p{
@@ -290,7 +289,6 @@ export default {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 0 38px;
     img {
       max-width: 100%;
       object-fit: cover;
@@ -304,6 +302,7 @@ export default {
     }
 
     p{
+      padding: 0 38px;
       margin-bottom: 235px;
       @include above(big){
         margin-right: 32px;

@@ -212,4 +212,8 @@ export default {
   overflow: hidden;
   align-items: flex-start;
 }
+
+.carousel__viewport{
+  height: 100%;
+}
 </style>

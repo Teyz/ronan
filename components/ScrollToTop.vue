@@ -4,13 +4,11 @@
 
 <script setup>
 import { useStore } from "@/stores/store";
+const store = useStore()
 const scrollToTop = () => {
   const mantraHeader = document.getElementById("mantraHeader");
   mantraHeader.scrollIntoView();
 };
-
-const store = useStore()
-
 </script>
 
 <style lang="scss" scoped>
