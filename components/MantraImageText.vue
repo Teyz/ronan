@@ -111,6 +111,10 @@ export default {
       text-align: left;
       margin: 102px auto 240px auto;
 
+      @include above(small) {
+        max-width: 447px;
+      }
+
       @include above(big) {
         padding: 0;
         font-size: 28px;

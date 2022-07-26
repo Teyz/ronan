@@ -18,7 +18,7 @@ export default {
 
 <style lang="scss" scoped>
 .mantraSimpleImageRoot {
-  @include above(small) {
+  @include above(big) {
     padding: 0 160px;
   }
   img {

@@ -58,6 +58,10 @@ export default {
     margin: 0 auto;
     font-weight: 100;
 
+    @include above(small) {
+      max-width: 1054px;
+    }
+
     @include above(big) {
       max-width: 1054px;
       font-size: 40px;
