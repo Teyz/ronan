@@ -27,7 +27,7 @@
 
     @include above(big) {
       top: -200%;
-      height: 280px;
+      height: 200px;
     }
   }
 
