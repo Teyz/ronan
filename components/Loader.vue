@@ -31,7 +31,7 @@ export default {
 
 <style lang="scss" scoped>
 .loaderRoot {
-  background: url("@/assets/img/texture.webp") no-repeat center center fixed;
+  background: url("@/assets/img/textureMobile.webp") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -50,6 +50,10 @@ export default {
   width: 100vw;
   min-height: 700px;
   padding: 0;
+
+  @include above(big){
+    background: url("@/assets/img/texture.webp") no-repeat center center fixed;
+  }
 
   .loaderAnimationContainer {
     object-fit: cover;
