@@ -1,7 +1,7 @@
 <template>
   <div class="headerRoot">
     <Transition name="slidedown">
-       <MobileMenu v-if="showMenu"/>
+       <MobileMenu v-if="showMenu" @close-menu='toggleMenu'/>
     </Transition>
     <header :class="{ isSticky }">
       <div class="container">
@@ -52,6 +52,7 @@ export default {
     const showMenu = ref(false);
     const toggleMenu = () => {
       showMenu.value = !showMenu.value;
+      document.querySelector(".menu-icon__cheeckbox").checked = showMenu.value;
     };
 
     const isFrenchActive = ref(true);

@@ -9,18 +9,17 @@
 
 <style lang="scss" scoped>
 #__root{
-  background: url("@/assets/img/textureMobile.webp") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  background: url("@/assets/img/textureMobile.webp");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
+  width: 100%;
 
   @include above(big){
-    background: url("@/assets/img/texture.webp") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    background: url("@/assets/img/texture.webp");
+    background-attachment: fixed;
     background-size: cover;
+    width: 100%;
   }
 }
 </style>

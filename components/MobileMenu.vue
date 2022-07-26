@@ -9,8 +9,8 @@
       </div>
       <ul class="nav">
         <!-- <li><a href="#movie">Film</a></li> -->
-        <li><a href="#mantraHeader">Mantras</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li @click="toggleMenu"><a href="#mantraHeader">Mantras</a></li>
+        <li @click="toggleMenu"><a href="#contact">Contact</a></li>
       </ul>
       <ul class="socialLinks">
         <li><a href="https://www.facebook.com/Ronan-By-Clinet-173378592719286">facebook</a></li>
@@ -18,7 +18,7 @@
       </ul>
     </div>
     <div class="footerContainer">
-      <NuxtLink to="mentions-legales">{{ $t("footer-legal") }}</NuxtLink>
+      <NuxtLink to="mentions-legales" @click="toggleMenu">{{ $t("footer-legal") }}</NuxtLink>
       <div class="footer">
         <p>© 2022 ronan by clinet</p>
       </div>
@@ -30,10 +30,10 @@
 import { useI18n } from "vue-i18n";
 export default {
   name: "MobileMenu",
-    setup() {
+    setup(props, { emit }) {
     const showMenu = ref(false);
     const toggleMenu = () => {
-      showMenu.value = !showMenu.value;
+      emit('close-menu');
     };
 
     const isFrenchActive = ref(true);
@@ -48,6 +48,7 @@ export default {
     const router = useRouter();
 
     const goToHome = () => {
+      toggleMenu();
       router.push({ path: "/" });
     };
 
@@ -89,11 +90,6 @@ export default {
 .innerBurger {
   width: 100vw;
   height: 100vh;
-  background: url("@/assets/img/texture.webp") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   background-color: $primary;
   z-index: 19;
 
