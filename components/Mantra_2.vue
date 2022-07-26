@@ -41,7 +41,6 @@ export default {
     const { stop } = useIntersectionObserver(
       el,
       ([{ isIntersecting }], observerElement) => {
-        console.log(isIntersecting);
         if(isIntersecting){
           store.setMantraSize(mantraSize.value);
         }

@@ -157,18 +157,18 @@ export default {
   flex-direction: column-reverse;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 0 38px;
   position: relative;
 
   .illus1{
     position: absolute;
-    left: -18%;
-    top: 10%;
-    width: 200px;
+    left: -5%;
+    top: 15%;
+    width: 100px;
     object-fit: cover;
 
     @include above(big){
       left: -18%;
+      width: 200px;
       top: -10%;
     }
   }
@@ -180,13 +180,13 @@ export default {
     width: 150px;
     object-fit: cover;
 
-     @include above(big){
-    right: -18%;
-    top: 30%;
+    @include above(big){
+      right: -18%;
+      top: 30%;
     }
 
     &.secondIllusTop{
-      top: -200%;
+      top: -150%;
     }
   }
 
@@ -211,12 +211,12 @@ export default {
   }
 
   .textCitation{
-
     h3{
       margin-bottom: 254px;
     }
 
     p{
+          padding: 0 38px;
       margin-top: 72px;
     }
 
@@ -290,6 +290,7 @@ export default {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
+    padding: 0 38px;
     img {
       max-width: 100%;
       object-fit: cover;

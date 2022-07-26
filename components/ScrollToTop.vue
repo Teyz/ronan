@@ -1,5 +1,5 @@
 <template>
-  <img src="@/assets/img/fleche.svg" alt="" @click="scrollToTop" v-if="store.$state.showBackToHeader" />
+  <img src="@/assets/img/fleche.svg" alt="" @click="scrollToTop" v-if="store.$state.showBackToHeader || false" />
 </template>
 
 <script setup>

@@ -93,8 +93,6 @@ export default {
 
     const store = useStore()
 
-    console.log(store.$state.mantraSize);
-
     const { stop } = useIntersectionObserver(
       showBackTopHeader,
       ([{ isIntersecting }], observerElement) => {

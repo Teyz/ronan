@@ -60,7 +60,7 @@ export default {
     width: 100px;
     position: absolute;
     right: 0%;
-    top: 77%;
+    top: 65%;
 
     @include above(big) {
       width: 200px;

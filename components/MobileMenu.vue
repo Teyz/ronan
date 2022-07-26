@@ -153,7 +153,6 @@ export default {
     a {
       font-size: 28px;
       font-weight: 100;
-      opacity: 50%;
     }
   }
 

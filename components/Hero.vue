@@ -1,5 +1,5 @@
 <template>
-  <div class="heroRoot">
+  <div class="heroRoot" id="hero">
     <div class="container">
       <img src="@/assets/img/ronandesktop.svg" alt="" />
       <h1 v-if="locale === 'fr'">
@@ -13,7 +13,7 @@
         ><br />
         {{ $t("subtitle2") }}<span>{{ $t("subtitle3") }}</span>
       </h1>
-      <a href="#movie">{{ $t("discover") }}</a>
+      <a href="#mantraHeader">{{ $t("discover") }}</a>
     </div>
   </div>
 </template>

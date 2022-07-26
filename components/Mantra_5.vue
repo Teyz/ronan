@@ -47,7 +47,6 @@ export default {
     const { stop } = useIntersectionObserver(
       el,
       ([{ isIntersecting }], observerElement) => {
-        console.log(isIntersecting);
         if(isIntersecting){
           store.setMantraSize(mantraSize.value);
         }
@@ -75,8 +74,6 @@ export default {
 
 <style lang="scss" scoped>
 .mantraHeader {
-  margin-bottom: 0px;
-
   @include above(big){
     margin-bottom: 360px;
   }

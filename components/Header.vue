@@ -67,6 +67,8 @@ export default {
 
     const goToHome = () => {
       router.push({ path: "/" });
+      const hero = document.getElementById("hero");
+      hero.scrollIntoView();
     };
 
     const changeLang = (lang) => {
@@ -279,8 +281,8 @@ header {
     span {
       position: absolute;
       display: block;
-      width: 100%;
-      height: 2px;
+      width: 150%;
+      height: 1px;
       background-color: var(--bar-bg, #000);
       border-radius: 1px;
       transition: all 0.2s cubic-bezier(0.1, 0.82, 0.76, 0.965);
