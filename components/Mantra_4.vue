@@ -1,5 +1,5 @@
 <template>
-  <div class="mantraRoot">
+  <div class="mantraRoot" ref="mantraRoot">
     <MantraHeader
       v-bind:currentSlide="currentSlide"
       @on-next="() => nextSlide()"

@@ -5,6 +5,7 @@
       :mouseDrag="false"
       :touchDrag="false"
       :transition="1000"
+      :wrapAround="true"
     >
       <slide v-for="(slide, key) in slides" :key="key">
         <component
@@ -14,6 +15,7 @@
           v-bind:currentSlide="currentSlide"
           @on-next="() => nextSlide()"
           @on-prev="() => prevSlide()"
+          ref="mantraRoot"
         />
       </slide>
     </Carousel>
@@ -32,6 +34,7 @@ import Mantra_4 from "./Mantra_4.vue";
 import Mantra_5 from "./Mantra_5.vue";
 import Mantra_6 from "./Mantra_6.vue";
 import { useStore } from "@/stores/store";
+import { useElementSize } from '@vueuse/core'
 
 export default {
   name: "MantraSlider",
@@ -90,12 +93,19 @@ export default {
 
     const store = useStore()
 
+    console.log(store.$state.mantraSize);
+
     const { stop } = useIntersectionObserver(
       showBackTopHeader,
       ([{ isIntersecting }], observerElement) => {
         store.setShowBackToHeader(isIntersecting);
       },
     )
+
+    const mantraRoot = ref(null);
+    // onMounted(() => {
+    //   const { height } = useElementSize(mantraRoot);
+    // });
 
     return {
       slider,
@@ -106,7 +116,9 @@ export default {
       prevSlide,
       slides,
       goToSlide,
-      showBackTopHeader
+      showBackTopHeader,
+      store,
+      mantraRoot
     };
   },
 };
