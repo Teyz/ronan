@@ -1,7 +1,7 @@
 <template>
   <div class="mentionsLegalesRoot">
     <div class="container">
-      <h1>mentions légales</h1>
+      <h1>legal & credits</h1>
       <div class="mentionsLegalesContent">
         <h2>credits</h2>
         <p>
@@ -10,6 +10,7 @@
           www.tayloryandell.com <br /><br />
 
           Site design and development: Taylor Yandell <br />
+          Development: Bastien Rigaud <br />
           Text: Taylor Yandell, translated into French by Taylor Yandell <br />
           Photography: L’Œil d’Eos, Taylor Yandell <br />
           Illustrations: La Lettre M - Pauline Lenain

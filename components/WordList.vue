@@ -1,12 +1,12 @@
 <template>
   <div class="wordListRoot">
     <ul>
-      <li @click="goToSlide(0)">{{ $t("mantra-1-wordlist") }}</li>
-      <li @click="goToSlide(1)">{{ $t("mantra-2-wordlist") }}</li>
-      <li @click="goToSlide(2)">{{ $t("mantra-3-wordlist") }}</li>
-      <li @click="goToSlide(3)">{{ $t("mantra-4-wordlist") }}</li>
-      <li @click="goToSlide(4)">{{ $t("mantra-5-wordlist") }}</li>
-      <li @click="goToSlide(5)">{{ $t("mantra-6-wordlist") }}</li>
+      <li class="wordListItem" @click="goToSlide(0)">{{ $t("mantra-1-wordlist") }}</li>
+      <li class="wordListItem" @click="goToSlide(1)">{{ $t("mantra-2-wordlist") }}</li>
+      <li class="wordListItem" @click="goToSlide(2)">{{ $t("mantra-3-wordlist") }}</li>
+      <li class="wordListItem" @click="goToSlide(3)">{{ $t("mantra-4-wordlist") }}</li>
+      <li class="wordListItem" @click="goToSlide(4)">{{ $t("mantra-5-wordlist") }}</li>
+      <li class="wordListItem" @click="goToSlide(5)">{{ $t("mantra-6-wordlist") }}</li>
     </ul>
   </div>
 </template>
@@ -14,7 +14,38 @@
 <script>
 export default {
   name: "WordList",
+  props: {
+    currentSlide: {
+      type: Number,
+      default: 0,
+    },
+  },
   setup(props, { emit }) {
+    const currentSlide = computed(() => props.currentSlide);
+    const wordListItems = ref();
+    onMounted(() => {
+       wordListItems.value = document.querySelectorAll('.wordListItem');
+       wordListItems.value.forEach((item, index) => {
+         console.log(item, index);
+        if(index === props.currentSlide){
+          item.style.pointerEvents = "none";
+        } else {
+           item.style.pointerEvents = "auto";
+        }
+      });
+    })
+
+    watch(currentSlide, (newValue) => {
+      wordListItems.value.forEach((item, index) => {
+        if(index === newValue){
+          item.style.pointerEvents = "none";
+        }
+        else {
+           item.style.pointerEvents = "auto";
+        }
+      });
+    });
+
     const goToSlide = (goToSlideNumber) => {
       const mantraHeader = document.getElementById("mantraHeader");
       mantraHeader.scrollIntoView();

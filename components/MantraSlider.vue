@@ -19,7 +19,7 @@
         />
       </slide>
     </Carousel>
-    <WordList @go-to-slide="(goToSlideNumber) => goToSlide(goToSlideNumber)" />
+    <WordList @go-to-slide="(goToSlideNumber) => goToSlide(goToSlideNumber)" v-bind:currentSlide="currentSlide"/>
   </div>
 </template>
 
