@@ -32,10 +32,6 @@ export default {
 <style lang="scss" scoped>
 .loaderRoot {
   background: url("@/assets/img/textureMobile.webp") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   position: fixed;
   background-color: $primary;
   top: 0;
