@@ -19,12 +19,15 @@
   position: fixed;
   background-size: cover;
   background-position: center;
+  z-index: -1;
 
   @include above(small){
     background-image: url("@/assets/img/texture.webp");
     background-attachment: fixed;
     background-size: cover;
-    width: 100%;
+    position: absolute;
+    height: 100%;
+    width: 100vw;
   }
 }
 </style>

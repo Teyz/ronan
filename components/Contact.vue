@@ -12,6 +12,7 @@
 <style lang="scss" scoped>
 .contactRoot {
   margin-bottom: 72px;
+  z-index: 2;
 }
 
 img {
