@@ -12,13 +12,15 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
 
   @include above(big){
     background: url("@/assets/img/texture.webp");
     background-attachment: fixed;
     background-size: cover;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
   }
 }
 </style>
