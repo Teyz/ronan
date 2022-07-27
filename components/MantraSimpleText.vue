@@ -37,7 +37,6 @@ export default {
   }
 
   img {
-    content: "";
     object-fit: cover;
     width: 150px;
     position: absolute;
