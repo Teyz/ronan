@@ -90,11 +90,15 @@ export default {
       }
 
       &:first-child {
-        margin-left: 0;
+        @include above(big){
+           margin-left: 0;
+        }
       }
 
       &:last-child {
-        margin-right: 0;
+         @include above(big){
+           margin-right: 0;
+        }
       }
     }
   }
