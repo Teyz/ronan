@@ -61,6 +61,7 @@ export default {
         isFrenchActive.value = true;
       }
       locale.value = lang;
+      toggleMenu();
     };
 
     watch(y, (newValue) => {
