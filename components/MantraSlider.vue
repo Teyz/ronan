@@ -123,7 +123,7 @@ export default {
   &:after {
     position: absolute;
     content: "";
-    width: 300%;
+    width: 110%;
     height: 100%;
     background-color: white;
     right: 0;
@@ -132,12 +132,20 @@ export default {
     z-index: 10;
     visibility: hidden;
     opacity: 0;
+
+    @include above(big){
+       width: 400%;
+    }
+
+    @include above(large){
+      width: 500%;
+    }
   }
 
   &:before {
     position: absolute;
     content: "";
-    width: 300%;
+    width: 110%;
     height: 100%;
     background-color: white;
     left: 0;
@@ -146,6 +154,14 @@ export default {
     z-index: 10;
     visibility: hidden;
     opacity: 0;
+
+    @include above(big){
+       width: 400%;
+    }
+
+    @include above(large){
+      width: 500%;
+    }
   }
 
 
