@@ -123,7 +123,7 @@ export default {
   &:after {
     position: absolute;
     content: "";
-    width: 110%;
+    width: 300%;
     height: 100%;
     background-color: white;
     right: 0;
@@ -137,7 +137,7 @@ export default {
   &:before {
     position: absolute;
     content: "";
-    width: 110%;
+    width: 300%;
     height: 100%;
     background-color: white;
     left: 0;
