@@ -22,9 +22,14 @@ export default {
     const loading = computed(() => store.$state.loading);
     const route = useRoute();
 
+
     onMounted(() => {
       if (route.hash) {
-        setTimeout(() => this.scrollTo(route.hash), 1)
+        const hash = route.hash.replace('#', '');
+        setTimeout(() => {
+            let scrollTo = document.getElementById(hash);
+            scrollTo.scrollIntoView();
+        }, 100)
       }
       disableScroll(true);
     });
