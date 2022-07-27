@@ -10,14 +10,18 @@
 <style lang="scss" scoped>
 #__root{
   position: relative;
-  background: url("@/assets/img/texturelonguex2.webp");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+}
+
+.background{
+  background-image: url("@/assets/img/texturelonguex2.webp");
+  height: 100vh;
   width: 100vw;
+  position: fixed;
+  background-size: cover;
+  background-position: center;
 
   @include above(small){
-    background: url("@/assets/img/texture.webp");
+    background-image: url("@/assets/img/texture.webp");
     background-attachment: fixed;
     background-size: cover;
     width: 100%;
