@@ -1,5 +1,6 @@
 <template>
   <NuxtLayout name="custom">
+    <ScrollToTop />
     <Transition name="fade">
       <Loader v-if="loading" />
     </Transition>

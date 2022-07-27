@@ -61,7 +61,7 @@ export default {
       animateRightLeft.value = true;
       setTimeout(() => {
         animateRightLeft.value = false;
-      }, 1000);
+      }, 1500);
     };
 
     const addAnimationLeftRight = () => {

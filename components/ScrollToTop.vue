@@ -1,10 +1,13 @@
 <template>
-  <img src="@/assets/img/fleche.svg" alt="" @click="scrollToTop" v-if="store.$state.showBackToHeader || false" />
+  <img class="scrollTop" src="@/assets/img/fleche.svg" alt="" @click="scrollToTop" v-if="store.$state.showBackToHeader" />
 </template>
 
 <script setup>
 import { useStore } from "@/stores/store";
 const store = useStore()
+onMounted(() => {
+  store.setShowBackToHeader(false);
+});
 const scrollToTop = () => {
   const mantraHeader = document.getElementById("mantraHeader");
   mantraHeader.scrollIntoView();
