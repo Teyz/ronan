@@ -1,5 +1,5 @@
 <template>
-  <div class="heroRoot" id="hero">
+  <div class="heroRoot" id="hero" ref="showBackTopHeader">
     <div class="container">
       <img src="@/assets/img/ronandesktop.svg" alt="" />
       <h1 v-if="locale === 'fr'">
@@ -20,13 +20,29 @@
 
 <script>
 import { useI18n } from "vue-i18n";
+import { useStore } from "@/stores/store";
 export default {
   name: "Hero",
   setup() {
     const { locale } = useI18n();
 
+    const showBackTopHeader = ref(null);
+
+    const store = useStore()
+
+    const { stop } = useIntersectionObserver(
+      showBackTopHeader,
+      ([{ isIntersecting }], observerElement) => {
+        if(isIntersecting){
+          store.setShowBackToHeader(false);
+        }
+      },
+    )
+
+
     return {
       locale,
+      showBackTopHeader
     };
   },
 };

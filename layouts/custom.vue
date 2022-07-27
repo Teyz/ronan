@@ -13,7 +13,7 @@
   background-attachment: fixed;
   width: 100%;
 
-  @include above(big){
+  @include above(small){
     background: url("@/assets/img/texture.webp");
     background-attachment: fixed;
     background-size: cover;

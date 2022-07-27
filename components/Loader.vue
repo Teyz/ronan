@@ -47,7 +47,7 @@ export default {
   min-height: 700px;
   padding: 0;
 
-  @include above(big){
+  @include above(small){
     background: url("@/assets/img/texture.webp") no-repeat center center fixed;
       -webkit-background-size: cover;
   -moz-background-size: cover;
