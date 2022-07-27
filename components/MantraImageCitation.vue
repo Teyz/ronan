@@ -204,12 +204,14 @@ export default {
 
   &.isMantra5{
     .illus1{
+      top: 20%;
       @include above(big){
         left: -17%;
       }
     }
 
     .illus2{
+      top: 38%;
       @include above(big){
         right: -15%;
       }
@@ -224,7 +226,7 @@ export default {
     object-fit: cover;
 
     &.isMantra6{
-      top: 30%;
+      top: 20%;
       @include above(big){
         left: -23%;
         width: 200px;
