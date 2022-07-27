@@ -63,8 +63,10 @@ export default {
     &.isReverse{
       .headerImage {
         &:after {
-          right: 30%;
-          left: inherit;
+          @include above(big){
+            right: 30%;
+            left: inherit;
+          }
         }
       }
     }
@@ -77,7 +79,7 @@ export default {
       height: 135px;
       background-color: #ae0721;
       position: absolute;
-      left: 10%;
+      left: 20%;
       bottom: -30%;
 
       @include above(big) {

@@ -313,11 +313,6 @@
 .mentionsLegalesRoot {
   height: 100%;
   position: relative;
-  background: url("@/assets/img/texture.webp") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   overflow: hidden;
   width: 100%;
 
