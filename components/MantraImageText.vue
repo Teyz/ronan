@@ -141,7 +141,6 @@ export default {
       max-width: 300px;
       font-size: 20px;
       line-height: 28px;
-      padding: 0 24px;
       text-align: left;
       margin: 102px auto 240px auto;
 
