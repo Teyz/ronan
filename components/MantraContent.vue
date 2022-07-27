@@ -82,6 +82,11 @@ export default {
       left: 20%;
       bottom: -30%;
 
+      @include above(small) {
+        height: 180px;
+        left: 30%;
+      }
+
       @include above(big) {
         height: 180px;
         left: 10%;
@@ -133,6 +138,10 @@ export default {
       font-size: 20px;
       line-height: 28px;
       text-align: left;
+
+      @include above(small){
+        max-width: 400px;
+      }
 
       @include above(big) {
         font-size: 16px;
