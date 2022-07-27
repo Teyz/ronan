@@ -10,7 +10,6 @@ const showBackToHeader = ref(false);
 const test = computed(() => store.$state.showBackToHeader);
 
 watch(test, (newValue) => {
-  console.log(newValue);
   showBackToHeader.value = newValue
 });
 

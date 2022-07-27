@@ -9,7 +9,7 @@
       red-middle-title
     />
     <MantraSimpleText :index="index" no-illus />
-    <MantraImageText is-citation :index="index" :slide="slide" />
+    <MantraImageText is-citation :index="index" :slide="slide" is-mantra-4/>
     <MantraSimpleImage :slide="slide" />
     <MantraControls @on-next="() => nextSlide()" @on-prev="() => prevSlide()" :currentSlide="currentSlide" />
   </div>

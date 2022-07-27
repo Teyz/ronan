@@ -4,7 +4,7 @@
       :src="slide?.images?.mantra_image_text_image_illus"
       alt=""
       class="illustration"
-      :class="{bigIllus}"
+      :class="{bigIllus, isMantra4}"
     />
     <div class="mantraImageTextHeader" :class="{ isCitation }">
       <img :src="slide?.images?.mantra_image_text_image_1" alt="" />
@@ -45,6 +45,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    isMantra4: {
+      type: Boolean,
+      default: false,
+    },
     slide: {
       type: Object,
       default: () => {},
@@ -66,6 +70,17 @@ export default {
     position: absolute;
     right: -10%;
     top: 78%;
+
+    &.isMantra4{
+      top: 60%;
+      width: 180px;
+      right: -2%;
+      @include above(big) {
+        right: 0;
+        top: 7%;
+        width: 200px;
+      }
+    }
 
     &.bigIllus{
       width: 180px;

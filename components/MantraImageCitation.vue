@@ -13,8 +13,8 @@
         class="largeImage"
       />
     </div>
-    <div class="mantraCitation" :class="{ isReverse }">
-      <img :src="slide?.images?.mantra_image_citation_illus_1" alt="" class="illus1">
+    <div class="mantraCitation" :class="{ isReverse, isMantra5 }">
+      <img :src="slide?.images?.mantra_image_citation_illus_1" alt="" class="illus1" :class="{isMantra6}">
       <img :src="slide?.images?.mantra_image_citation_illus_2" alt="" class="illus2" :class="{secondIllusTop, secondIllusSmall}">
       <img :src="slide?.images?.mantra_image_citation_illus_3" alt="" class="illus3" v-if="showLastIllus">
       <div class="textCitation">
@@ -62,6 +62,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    isMantra5: {
+      type: Boolean,
+      default: false,
+    },
     isLastBlock: {
       type: Boolean,
       default: false,
@@ -83,6 +87,10 @@ export default {
       default: false,
     },
     secondIllusSmall: {
+      type: Boolean,
+      default: false,
+    },
+    isMantra6: {
       type: Boolean,
       default: false,
     },
@@ -167,12 +175,35 @@ export default {
   justify-content: space-between;
   position: relative;
 
+  &.isMantra5{
+    .illus1{
+      @include above(big){
+        left: -17%;
+      }
+    }
+
+    .illus2{
+      @include above(big){
+        right: -15%;
+      }
+    }
+  }
+
   .illus1{
     position: absolute;
     left: -5%;
     top: 15%;
     width: 100px;
     object-fit: cover;
+
+    &.isMantra6{
+      top: 30%;
+      @include above(big){
+        left: -23%;
+        width: 200px;
+        top: -10%;
+      }
+    }
 
     @include above(big){
       left: -23%;
@@ -218,6 +249,7 @@ export default {
     top: -25%;
     width: 89px;
     object-fit: contain;
+    display: block;
     }
   }
 

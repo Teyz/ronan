@@ -4,7 +4,8 @@ export const useStore = defineStore('store', {
   state: () => ({
     showBackToHeader: false,
     mantraSize: 5905,
-    showMenu: false
+    showMenu: false,
+    loading: true
   }),
 
   actions: {
@@ -16,6 +17,9 @@ export const useStore = defineStore('store', {
     },
     setShowMenu(value) {
       this.showMenu = value
+    },
+    setLoading(value) {
+      this.loading = value
     },
   },
 })

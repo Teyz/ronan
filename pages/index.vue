@@ -14,17 +14,23 @@
 <script>
 import { disableScroll } from "@/utils";
 import { onMounted } from "vue";
+import { useStore } from "@/stores/store";
 export default {
   name: "CustomLayout",
   setup() {
-    const loading = ref(true);
+    const store = useStore()
+    const loading = computed(() => store.$state.loading);
+    const route = useRoute();
 
     onMounted(() => {
+      if (route.hash) {
+        setTimeout(() => this.scrollTo(route.hash), 1)
+      }
       disableScroll(true);
     });
 
     setTimeout(() => {
-      loading.value = false;
+      store.setLoading(false);
       disableScroll(false);
     }, 2500);
     

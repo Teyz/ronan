@@ -84,7 +84,8 @@ export default {
 
       @include above(big) {
         height: 180px;
-        bottom: -20%;
+        left: 10%;
+        bottom: -10%;
       }
     }
   }

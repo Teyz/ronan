@@ -7,20 +7,22 @@
       <div class="container">
         <ul class="nav">
           <!-- <li><a href="#movie">Film</a></li> -->
-          <li><a href="#mantraHeader">Mantras</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li v-if="route.name === 'mentions-legales'"><nuxt-link :to="{path: '/', hash: '#mantraHeader'}">Mantras</nuxt-link></li>
+          <li v-if="route.name === 'mentions-legales'"><nuxt-link :to="{ path: '/',hash:'#contact'}">Contact</nuxt-link></li>
+          <li v-if="route.name !== 'mentions-legales'"><a href="#mantraHeader">Mantras</a></li>
+          <li v-if="route.name !== 'mentions-legales'"><a href="#contact">Contact</a></li>
         </ul>
         <img
           src="@/assets/img/logoMobile.svg"
           alt="Logo Ronan By Clinet"
           class="logoMobile"
-          @click="goToHome"
+          @click="goToHome('hero')"
         />
         <img
           src="@/assets/img/logo.svg"
           alt="Logo Ronan By Clinet"
           class="logoDesktop"
-          @click="goToHome"
+          @click="goToHome('hero')"
         />
         <div class="languageRoot">
           <span @click="changeLang('fr')" :class="{ isFrenchActive, lang: 'lang' }">FR</span>
@@ -67,9 +69,9 @@ export default {
     const router = useRouter();
     const route = useRoute();
 
-    const goToHome = () => {
+    const goToHome = (value) => {
       router.push({ path: "/" });
-      const hero = document.getElementById("hero");
+      const hero = document.getElementById(value);
       hero.scrollIntoView();
     };
 
@@ -106,6 +108,7 @@ export default {
       isFrenchActive,
       isEnglishActive,
       goToHome,
+      route
     };
   },
 };
