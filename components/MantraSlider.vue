@@ -4,7 +4,7 @@
       ref="slider"
       :mouseDrag="false"
       :touchDrag="false"
-      :transition="1000"
+      :transition="500"
       :style="`height: ${store.$state.mantraSize}px`"
     >
       <slide v-for="(slide, key) in slides" :key="key">
@@ -68,7 +68,7 @@ export default {
       animateLeftRight.value = true;
       setTimeout(() => {
         animateLeftRight.value = false;
-      }, 1000);
+      }, 1500);
     };
 
     const goToSlide = (goToSlideNumber) => {
@@ -123,7 +123,7 @@ export default {
   &:after {
     position: absolute;
     content: "";
-    width: 110%;
+    width: 500%;
     height: 100%;
     background-color: white;
     right: 0;
@@ -134,7 +134,7 @@ export default {
     opacity: 0;
 
     @include above(big){
-       width: 400%;
+      width: 400%;
     }
 
     @include above(large){
@@ -145,7 +145,7 @@ export default {
   &:before {
     position: absolute;
     content: "";
-    width: 110%;
+    width: 500%;
     height: 100%;
     background-color: white;
     left: 0;
