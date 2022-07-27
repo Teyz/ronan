@@ -29,8 +29,6 @@ export default {
       ([{ isIntersecting }], observerElement) => {
         if(isIntersecting){
            store.setShowBackToHeader(false);
-        } else {
-          store.setShowBackToHeader(true);
         }
       },
     )

@@ -1,5 +1,6 @@
 <template>
   <div id="__root">
+    <div class="background"></div>
     <Header />
     <slot />
     <Footer />
@@ -8,10 +9,12 @@
 
 <style lang="scss" scoped>
 #__root{
-  background: url("@/assets/img/textureMobile.webp");
+  position: relative;
+  background: url("@/assets/img/texturelonguex2.webp");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  width: 100%;
+  background-size: cover;
+  width: 100vw;
 
   @include above(small){
     background: url("@/assets/img/texture.webp");
