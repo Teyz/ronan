@@ -10,7 +10,7 @@
     <MantraContent :slide="slide" :index="index" is-reverse />
     <MantraSimpleText :slide="slide" :index="index" />
     <MantraImageText :slide="slide" :index="index" big-illus/>
-    <MantraControls @on-next="() => nextSlide()" @on-prev="() => prevSlide()" />
+    <MantraControls @on-next="() => nextSlide()" @on-prev="() => prevSlide()" :currentSlide="currentSlide"/>
   </div>
 </template>
 

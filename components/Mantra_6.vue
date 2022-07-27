@@ -9,7 +9,7 @@
     />
     <MantraImageCitation is-reverse :slide="slide" :index="index" second-illus-top />
     <MantraSimpleImage :slide="slide" />
-    <MantraControls @on-next="() => nextSlide()" @on-prev="() => prevSlide()" />
+    <MantraControls @on-next="() => nextSlide()" @on-prev="() => prevSlide()" :currentSlide="currentSlide"/>
   </div>
 </template>
 

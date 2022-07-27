@@ -213,7 +213,7 @@ export default {
   align-items: flex-start;
 }
 
-.carousel__viewport{
+.carousel__viewport, .carousel__slide, .carousel__track{
   height: 100%;
 }
 </style>

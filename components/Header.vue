@@ -65,6 +65,7 @@ export default {
     const { locale } = useI18n();
 
     const router = useRouter();
+    const route = useRoute();
 
     const goToHome = () => {
       router.push({ path: "/" });
@@ -73,8 +74,6 @@ export default {
     };
 
     const changeLang = (lang) => {
-      const hero = document.getElementById("hero");
-      hero.scrollIntoView();
       if (lang === "en") {
         isEnglishActive.value = true;
         isFrenchActive.value = false;
@@ -83,6 +82,10 @@ export default {
         isFrenchActive.value = true;
       }
       locale.value = lang;
+      if(route.name != 'mentions-legales'){
+        const hero = document.getElementById("hero");
+        hero.scrollIntoView();
+      }
     };
 
     watch(y, (newValue) => {

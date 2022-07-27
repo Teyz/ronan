@@ -11,7 +11,7 @@
     <MantraSimpleImage :slide="slide" />
     <MantraSimpleText :index="index" no-illus />
     <MantraImageCitation is-last-block :index="index" :slide="slide" no-second-small />
-    <MantraControls @on-next="() => nextSlide()" @on-prev="() => prevSlide()" />
+    <MantraControls @on-next="() => nextSlide()" @on-prev="() => prevSlide()" :currentSlide="currentSlide"/>
   </div>
 </template>
 

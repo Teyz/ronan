@@ -26,7 +26,6 @@ export default {
     onMounted(() => {
        wordListItems.value = document.querySelectorAll('.wordListItem');
        wordListItems.value.forEach((item, index) => {
-         console.log(item, index);
         if(index === props.currentSlide){
           item.style.pointerEvents = "none";
         } else {

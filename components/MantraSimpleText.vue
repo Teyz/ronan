@@ -38,7 +38,7 @@ export default {
 
   img {
     content: "";
-    object-fit: contain;
+    object-fit: cover;
     width: 150px;
     position: absolute;
     left: -8%;

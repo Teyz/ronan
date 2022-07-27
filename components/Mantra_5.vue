@@ -16,8 +16,9 @@
       is-last-block
       show-last-illus
       last-block-margin-top
+      second-illus-small
     />
-    <MantraControls @on-next="() => nextSlide()" @on-prev="() => prevSlide()" />
+    <MantraControls @on-next="() => nextSlide()" @on-prev="() => prevSlide()"  :currentSlide="currentSlide"/>
   </div>
 </template>
 

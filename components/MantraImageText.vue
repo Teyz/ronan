@@ -159,7 +159,7 @@ export default {
         line-height: 53px;
         right: 14%;
         max-width: 360px;
-        bottom: -30%;
+        bottom: -25%;
       }
     }
 
