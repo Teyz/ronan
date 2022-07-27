@@ -13,7 +13,29 @@
         class="largeImage"
       />
     </div>
-    <div class="mantraCitation" :class="{ isReverse, isMantra5 }">
+    <div class="mantraCitation" :class="{ isReverse, isMantra5, lastTextFull }" v-if="lastTextFull">
+      <img :src="slide?.images?.mantra_image_citation_illus_1" alt="" class="illus1" :class="{isMantra6}">
+      <img :src="slide?.images?.mantra_image_citation_illus_2" alt="" class="illus2" :class="{secondIllusTop, secondIllusSmall}">
+      <img :src="slide?.images?.mantra_image_citation_illus_3" alt="" class="illus3" v-if="showLastIllus">
+      <div class="textCitation">
+        <h3>{{ $t(`mantra-${index}-image-citation-citation-1`) }}</h3>
+        <img
+          :src="slide?.images?.mantra_image_citation_4"
+          alt=""
+          class="largeImage"
+          v-if="isLastBlock"
+        />
+        <p>
+          {{ $t(`mantra-${index}-image-citation-text-2`) }}
+        </p>
+      </div>
+      <div class="textImage">
+        <p>
+          {{ $t(`mantra-${index}-image-citation-text-3`) }}
+        </p>
+      </div>
+    </div>
+    <div class="mantraCitation" :class="{ isReverse, isMantra5 }" v-else>
       <img :src="slide?.images?.mantra_image_citation_illus_1" alt="" class="illus1" :class="{isMantra6}">
       <img :src="slide?.images?.mantra_image_citation_illus_2" alt="" class="illus2" :class="{secondIllusTop, secondIllusSmall}">
       <img :src="slide?.images?.mantra_image_citation_illus_3" alt="" class="illus3" v-if="showLastIllus">
@@ -91,6 +113,10 @@ export default {
       default: false,
     },
     isMantra6: {
+      type: Boolean,
+      default: false,
+    },
+    lastTextFull: {
       type: Boolean,
       default: false,
     },
@@ -174,6 +200,7 @@ export default {
   align-items: flex-start;
   justify-content: space-between;
   position: relative;
+
 
   &.isMantra5{
     .illus1{
@@ -329,10 +356,11 @@ export default {
     }
   }
   p {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 100;
-    line-height: 18px;
-    max-width: 300px;
+    line-height: 28px;
+    max-width: 400px;
+    padding: 0 38px;
     text-align: left;
 
     @include above(big){
@@ -361,12 +389,38 @@ export default {
     }
 
     p{
-      padding: 0 38px;
       margin-bottom: 235px;
       @include above(big){
         margin-right: 32px;
         margin-bottom: 0;
       }
+    }
+  }
+
+
+  &.lastTextFull{
+    @include above(big){
+      display: block;
+
+      .illus1{
+        left: -20%;
+      }
+
+      .textCitation{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+      }
+
+      .textImage{
+        margin-top: 104px;
+        p{
+          max-width: 100%;
+          text-align: center;
+        }
+      }
+
     }
   }
 }

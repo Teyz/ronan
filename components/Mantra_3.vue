@@ -68,6 +68,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.mantraSimpleImageRoot{
+  @include above(big){
+    margin-top: 208Px;
+  }
+}
 .mantraSimpleTextRoot {
   padding-top: 144px;
 }

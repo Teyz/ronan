@@ -210,11 +210,13 @@ export default {
 
 .prev{
     color: #260f01;
+    pointer-events: auto;
     path {
       stroke: #260f01;
     }
   &.slide-0{
     color: #00000029;
+    pointer-events: none;
     path {
         stroke: #cfc9c7;
       }
@@ -223,11 +225,13 @@ export default {
 
 .next{ 
   color: #260f01;
+  pointer-events: auto;
     path {
       stroke: #260f01;
     }
   &.slide-0{
     color: #260f01;
+    pointer-events: auto;
     path {
       stroke: #260f01;
     }
@@ -235,6 +239,7 @@ export default {
 
   &.slide-5{
      color: #00000029;
+     pointer-events: none;
     path {
         stroke: #cfc9c7;
       }
