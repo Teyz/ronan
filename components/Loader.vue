@@ -31,7 +31,7 @@ export default {
 
 <style lang="scss" scoped>
 .loaderRoot {
-  background: url("@/assets/img/textureMobile.webp") no-repeat center center fixed;
+  background: url("@/assets/img/texturelonguex2.webp") no-repeat center center fixed;
   position: fixed;
   background-color: $primary;
   top: 0;
