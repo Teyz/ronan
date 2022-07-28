@@ -169,8 +169,9 @@ export default {
     display: block;
 
     @include above(small) {
-      font-size: 21px;
+      font-size: 16px;
       line-height: 29px;
+      letter-spacing: 2.5px;
     }
   }
 

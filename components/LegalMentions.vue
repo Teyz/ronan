@@ -12,8 +12,8 @@
           Site design and development: Taylor Yandell <br />
           Development: Bastien Rigaud <br />
           Text: Taylor Yandell, translated into French by Taylor Yandell <br />
-          Photography: L’Œil d’Eos, Taylor Yandell <br />
-          Illustrations: La Lettre M - Pauline Lenain
+          Photography: L’Œil d’Eos <br />
+          Illustrations: La Lettre M - Pauline Lenain <br /><br/>
         </p>
         <h2>legal notice</h2>
         <p>
@@ -397,9 +397,10 @@
     font-size: 22px;
     font-style: italic;
     margin: 8px 0;
+    text-transform: uppercase;
 
     @include above(small) {
-      font-size: 28px;
+      font-size: 20px;
     }
   }
 

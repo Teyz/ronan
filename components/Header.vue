@@ -239,7 +239,7 @@ header {
       a {
         font-family: "SchnyderS";
         font-weight: 100;
-        font-size: 14px;
+        font-size: 12px;
         letter-spacing: 3px;
         line-height: 20px;
         text-transform: uppercase;

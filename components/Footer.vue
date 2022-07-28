@@ -99,7 +99,7 @@ footer {
         line-height: 18px;
 
         @include above(big) {
-          font-size: 18px;
+          font-size: 14px;
         }
       }
 
