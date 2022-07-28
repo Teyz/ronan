@@ -139,6 +139,7 @@ header {
     animation: smoothScroll 0.5s forwards;
     position: fixed;
     background-color: $primary;
+    box-shadow: 0px 3px 6px #00000006;
 
     .logoMobile {
       cursor: pointer;
