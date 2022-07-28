@@ -2,10 +2,18 @@
   <div class="innerBurger">
     <div></div>
     <div class="main">
-      <div class="languageRoot">
-        <span @click="changeLang('fr')" :class="{ isFrenchActive, lang: 'lang' }">FR</span>
+      <div class="languageRoot" v-if="!noLang">
+        <span
+          @click="changeLang('fr')"
+          :class="{ isFrenchActive, lang: 'lang' }"
+          >FR</span
+        >
         <span> | </span>
-        <span @click="changeLang('en')" :class="{ isEnglishActive , lang: 'lang' }">EN</span>
+        <span
+          @click="changeLang('en')"
+          :class="{ isEnglishActive, lang: 'lang' }"
+          >EN</span
+        >
       </div>
       <ul class="nav">
         <!-- <li><a href="#movie">Film</a></li> -->
@@ -13,12 +21,20 @@
         <li @click="toggleMenu"><a href="#contact">Contact</a></li>
       </ul>
       <ul class="socialLinks">
-        <li><a href="https://www.facebook.com/Ronan-By-Clinet-173378592719286">facebook</a></li>
-        <li><a href="https://www.instagram.com/ronanbyclinet/">instagram</a></li>
+        <li>
+          <a href="https://www.facebook.com/Ronan-By-Clinet-173378592719286"
+            >facebook</a
+          >
+        </li>
+        <li>
+          <a href="https://www.instagram.com/ronanbyclinet/">instagram</a>
+        </li>
       </ul>
     </div>
     <div class="footerContainer">
-      <NuxtLink to="mentions-legales" @click="toggleMenu">{{ $t("footer-legal") }}</NuxtLink>
+      <NuxtLink to="mentions-legales" @click="toggleMenu">{{
+        $t("footer-legal")
+      }}</NuxtLink>
       <div class="footer">
         <p>© 2022 ronan by clinet</p>
       </div>
@@ -30,10 +46,16 @@
 import { useI18n } from "vue-i18n";
 export default {
   name: "MobileMenu",
-    setup(props, { emit }) {
+  props: {
+    noLang: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  setup(props, { emit }) {
     const showMenu = ref(false);
     const toggleMenu = () => {
-      emit('close-menu');
+      emit("close-menu");
     };
 
     const isFrenchActive = ref(true);

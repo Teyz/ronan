@@ -1,16 +1,26 @@
 <template>
   <div class="headerRoot">
     <Transition name="slidedown">
-       <MobileMenu v-if="showMenu" @close-menu='toggleMenu'/>
+      <MobileMenu v-if="showMenu" @close-menu="toggleMenu" :no-lang="noLang" />
     </Transition>
     <header :class="{ isSticky }">
       <div class="container">
         <ul class="nav">
           <!-- <li><a href="#movie">Film</a></li> -->
-          <li v-if="route.name === 'mentions-legales'"><nuxt-link :to="{path: '/', hash: '#mantraHeader'}">Mantras</nuxt-link></li>
-          <li v-if="route.name === 'mentions-legales'"><nuxt-link :to="{ path: '/',hash:'#contact'}">Contact</nuxt-link></li>
-          <li v-if="route.name !== 'mentions-legales'"><a href="#mantraHeader">Mantras</a></li>
-          <li v-if="route.name !== 'mentions-legales'"><a href="#contact">Contact</a></li>
+          <li v-if="route.name === 'mentions-legales'">
+            <nuxt-link :to="{ path: '/', hash: '#mantraHeader' }"
+              >Mantras</nuxt-link
+            >
+          </li>
+          <li v-if="route.name === 'mentions-legales'">
+            <nuxt-link :to="{ path: '/', hash: '#contact' }">Contact</nuxt-link>
+          </li>
+          <li v-if="route.name !== 'mentions-legales'">
+            <a href="#mantraHeader">Mantras</a>
+          </li>
+          <li v-if="route.name !== 'mentions-legales'">
+            <a href="#contact">Contact</a>
+          </li>
         </ul>
         <img
           src="@/assets/img/logoMobile.svg"
@@ -24,10 +34,18 @@
           class="logoDesktop"
           @click="goToHome('hero')"
         />
-        <div class="languageRoot">
-          <span @click="changeLang('fr')" :class="{ isFrenchActive, lang: 'lang' }">FR</span>
+        <div class="languageRoot" v-if="!noLang">
+          <span
+            @click="changeLang('fr')"
+            :class="{ isFrenchActive, lang: 'lang' }"
+            >FR</span
+          >
           <span> | </span>
-          <span @click="changeLang('en')" :class="{ isEnglishActive , lang: 'lang' }">EN</span>
+          <span
+            @click="changeLang('en')"
+            :class="{ isEnglishActive, lang: 'lang' }"
+            >EN</span
+          >
         </div>
         <div class="menu-icon">
           <input
@@ -50,6 +68,12 @@ import { useWindowScroll } from "@vueuse/core";
 import { useI18n } from "vue-i18n";
 export default {
   name: "Header",
+  props: {
+    noLang: {
+      type: Boolean,
+      default: false,
+    },
+  },
   setup() {
     const showMenu = ref(false);
     const toggleMenu = () => {
@@ -84,7 +108,7 @@ export default {
         isFrenchActive.value = true;
       }
       locale.value = lang;
-      if(route.name != 'mentions-legales'){
+      if (route.name != "mentions-legales") {
         const hero = document.getElementById("hero");
         hero.scrollIntoView();
       }
@@ -108,7 +132,7 @@ export default {
       isFrenchActive,
       isEnglishActive,
       goToHome,
-      route
+      route,
     };
   },
 };
@@ -206,12 +230,12 @@ header {
       text-transform: uppercase;
       cursor: pointer;
 
-      &.lang{
-        &:hover{
-        color: $secondary;
+      &.lang {
+        &:hover {
+          color: $secondary;
         }
       }
-      
+
       &.isEnglishActive,
       &.isFrenchActive {
         color: $secondary;
