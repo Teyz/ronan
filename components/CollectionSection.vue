@@ -80,7 +80,9 @@
   }
 
   &:nth-child(2) {
-    margin-top: 64px;
+    @include above(big) {
+      margin-top: 64px;
+    }
   }
 
   h2 {
