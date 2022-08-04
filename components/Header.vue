@@ -18,6 +18,9 @@
           <li v-if="route.name !== 'mentions-legales'">
             <a href="#mantraHeader">Mantras</a>
           </li>
+          <li>
+            <nuxt-link :to="{ path: '/collection' }">Collection</nuxt-link>
+          </li>
           <li v-if="route.name !== 'mentions-legales'">
             <a href="#contact">Contact</a>
           </li>
