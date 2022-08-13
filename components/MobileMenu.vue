@@ -16,7 +16,7 @@
         >
       </div>
       <ul class="nav">
-        <!-- <li><a href="#movie">Film</a></li> -->
+        <li><a href="#movie">Film</a></li>
         <li @click="toggleMenu"><a href="#mantraHeader">Mantras</a></li>
         <li @click="toggleMenu">
           <nuxt-link :to="{ path: '/collection' }">Collection</nuxt-link>

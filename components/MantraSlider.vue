@@ -1,5 +1,5 @@
 <template>
-  <div class="mantraSliderRoot" :class="{ animateRightLeft, animateLeftRight }" ref="showBackTopHeader">
+  <div class="mantraSliderRoot" ref="showBackTopHeader">
     <Carousel
       ref="slider"
       :mouseDrag="false"
@@ -19,7 +19,10 @@
         />
       </slide>
     </Carousel>
-    <WordList @go-to-slide="(goToSlideNumber) => goToSlide(goToSlideNumber)" v-bind:currentSlide="currentSlide"/>
+    <WordList
+      @go-to-slide="(goToSlideNumber) => goToSlide(goToSlideNumber)"
+      v-bind:currentSlide="currentSlide"
+    />
   </div>
 </template>
 
@@ -71,14 +74,14 @@ export default {
 
     const showBackTopHeader = ref(null);
 
-    const store = useStore()
+    const store = useStore();
 
     const { stop } = useIntersectionObserver(
       showBackTopHeader,
       ([{ isIntersecting }], observerElement) => {
         store.setShowBackToHeader(isIntersecting);
-      },
-    )
+      }
+    );
 
     return {
       slider,
@@ -88,7 +91,7 @@ export default {
       slides,
       goToSlide,
       showBackTopHeader,
-      store
+      store,
     };
   },
 };
@@ -119,7 +122,9 @@ export default {
   align-items: flex-start;
 }
 
-.carousel__viewport, .carousel__slide, .carousel__track{
+.carousel__viewport,
+.carousel__slide,
+.carousel__track {
   height: 100%;
 }
 </style>

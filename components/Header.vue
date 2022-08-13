@@ -6,7 +6,7 @@
     <header :class="{ isSticky }">
       <div class="container">
         <ul class="nav">
-          <!-- <li><a href="#movie">Film</a></li> -->
+          <li><a href="#movie">Film</a></li>
           <li v-if="route.name === 'mentions-legales'">
             <nuxt-link :to="{ path: '/', hash: '#mantraHeader' }"
               >Mantras</nuxt-link
