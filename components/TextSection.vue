@@ -2,35 +2,40 @@
   <section class="textSectionRoot">
     <h3>Bordeaux.</h3>
     <div class="textRoot">
-      <p v-if="locale === 'fr'">
-        {{ $t("home-text-1") }}
-        <span>{{ $t("home-text-red-1") }}</span>
-        {{ $t("home-text-2") }}
-        <span>{{ $t("home-text-red-2") }}</span>
-        {{ $t("home-text-3") }}
-        <span>{{ $t("home-text-red-3") }}</span>
-        {{ $t("home-text-4") }}
-        <span>{{ $t("home-text-red-4") }}</span>
-        {{ $t("home-text-5") }}
-        <span>{{ $t("home-text-red-5") }}</span>
-        {{ $t("home-text-6") }}
-      </p>
-      <p v-else>
-        {{ $t("home-text-1") }}
-        <span>{{ $t("home-text-red-1") }}</span>
-        {{ $t("home-text-2") }}
-        <span>{{ $t("home-text-red-2") }}</span>
-        {{ $t("home-text-3") }}
-        <span>{{ $t("home-text-red-3") }}</span>
-        {{ $t("home-text-4") }}
-        <span>{{ $t("home-text-red-4") }}</span>
-        {{ $t("home-text-5") }}
-        <span>{{ $t("home-text-red-5") }}</span>
-        {{ $t("home-text-6") }}
-        <span>{{ $t("home-text-red-6") }}</span>
-        {{ $t("home-text-7") }}
-      </p>
-      <span style="bottom: -30%">{{ $t("home-citation") }}</span>
+      <div v-if="locale === 'fr'">
+        <p>
+          {{ $t("home-text-1") }}
+          <span>{{ $t("home-text-red-1") }}</span>
+          {{ $t("home-text-2") }}
+          <span>{{ $t("home-text-red-2") }}</span>
+          {{ $t("home-text-3") }}
+          <span>{{ $t("home-text-red-3") }}</span>
+          {{ $t("home-text-4") }}
+          <span>{{ $t("home-text-red-4") }}</span>
+          {{ $t("home-text-5") }}
+          <span>{{ $t("home-text-red-5") }}</span>
+          {{ $t("home-text-6") }}
+        </p>
+        <span>{{ $t("home-citation") }}</span>
+      </div>
+      <div v-else>
+        <p>
+          {{ $t("home-text-1") }}
+          <span>{{ $t("home-text-red-1") }}</span>
+          {{ $t("home-text-2") }}
+          <span>{{ $t("home-text-red-2") }}</span>
+          {{ $t("home-text-3") }}
+          <span>{{ $t("home-text-red-3") }}</span>
+          {{ $t("home-text-4") }}
+          <span>{{ $t("home-text-red-4") }}</span>
+          {{ $t("home-text-5") }}
+          <span>{{ $t("home-text-red-5") }}</span>
+          {{ $t("home-text-6") }}
+          <span>{{ $t("home-text-red-6") }}</span>
+          {{ $t("home-text-7") }}
+        </p>
+        <span class="citation-en">{{ $t("home-citation") }}</span>
+      </div>
     </div>
   </section>
 </template>
@@ -87,7 +92,7 @@ h3 {
   color: #b71616;
   text-transform: capitalize;
   text-align: center;
-  font-size: 51px;
+  font-size: 30px;
   line-height: 34px;
   margin-bottom: 16px;
 
@@ -155,8 +160,20 @@ span {
   font-size: 50px;
   line-height: 34px;
   position: absolute;
-  bottom: -5%;
+  bottom: -10%;
   right: 10%;
+
+  &.citation-en {
+    bottom: -10%;
+
+    @include above(big) {
+      bottom: -30%;
+    }
+
+    @include above(large) {
+      bottom: -30%;
+    }
+  }
 
   @include above(big) {
     line-height: 57px;

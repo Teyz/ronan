@@ -68,11 +68,10 @@
     font-size: 30px;
     text-align: center;
 
-    margin-bottom: 54px;
-
     @include above(big) {
       line-height: 72px;
       font-size: 80px;
+      margin-bottom: 54px;
     }
   }
 

@@ -2,7 +2,7 @@
   <div class="movieRoot" id="movie">
     <div style="padding: 56.25% 0 0 0; position: relative">
       <iframe
-        src="https://player.vimeo.com/video/736442874?h=8a8f59f665&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+        src="https://player.vimeo.com/video/736442874?h=8a8f59f665&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&byline=0&title=false"
         frameborder="0"
         allow="autoplay; fullscreen; picture-in-picture"
         allowfullscreen
@@ -19,8 +19,6 @@
   scroll-margin-bottom: 0px;
 }
 .movieRoot {
-  padding: 24px 0 0 0;
-
   @include above(big) {
     padding: 200px 142px;
   }
@@ -33,7 +31,7 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: -150%;
+    top: -70%;
     z-index: 11;
 
     @include above(big) {
@@ -50,7 +48,7 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -20%;
+    bottom: -70%;
 
     @include above(big) {
       bottom: -20%;
