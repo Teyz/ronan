@@ -65,10 +65,15 @@
     font-weight: 100;
     font-style: italic;
     line-height: 72px;
-    font-size: 80px;
+    font-size: 30px;
     text-align: center;
 
-    margin-bottom: 32px;
+    margin-bottom: 54px;
+
+    @include above(big) {
+      line-height: 72px;
+      font-size: 80px;
+    }
   }
 
   p {
@@ -87,11 +92,9 @@
 
 .collectionList {
   @include above(big) {
-    @include above(big) {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -147,7 +150,7 @@
   margin: 32px 0;
 
   @include above(big) {
-    margin: 0 104px;
+    margin: 0 64px;
   }
 
   &:nth-child(2) {

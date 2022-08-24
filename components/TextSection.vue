@@ -2,27 +2,52 @@
   <section class="textSectionRoot">
     <h3>Bordeaux.</h3>
     <div class="textRoot">
-      <p>
-        Si pour certains ce nom évoque celui d’une ville ou d’une couleur, pour
-        d’autres c’est aussi celui d’un vignoble aux racines profondément
-        ancrées dans l’histoire. Clinet, cru iconique de Pomerol tire son
-        patronyme du vigneron ayant œuvré sur ce terroir au Moyen Age, et
-        perpétue sa filiation au travers la collection « Ronan by Clinet ». Tiré
-        du nom de l’actuel propriétaire, Ronan by Clinet est un clin d’œil à
-        cette histoire et la promesse du savoir-faire de Clinet au service d'un
-        bordeaux spontané et généreux, inspiré de terroirs privilégiés et
-        discrets mais également du style de vie de Ronan. Qu'il s'agisse du
-        rouge, du rosé ou du blanc, Ronan by Clinet est la mise en bouteille des
-        valeurs de Ronan : respect, témérité, patience, confiance, optimisme et
-        partage. Pour représenter ces valeurs, le personnage de Ronan prend vie
-        en 2016 au sein d’une nouvelle étiquette. Il y apparait tel un dandy
-        enfourchant sa draisienne pour partager sa vision de Bordeaux – reposant
-        sur six principes de vie – avec le reste de monde.
+      <p v-if="locale === 'fr'">
+        {{ $t("home-text-1") }}
+        <span>{{ $t("home-text-red-1") }}</span>
+        {{ $t("home-text-2") }}
+        <span>{{ $t("home-text-red-2") }}</span>
+        {{ $t("home-text-3") }}
+        <span>{{ $t("home-text-red-3") }}</span>
+        {{ $t("home-text-4") }}
+        <span>{{ $t("home-text-red-4") }}</span>
+        {{ $t("home-text-5") }}
+        <span>{{ $t("home-text-red-5") }}</span>
+        {{ $t("home-text-6") }}
       </p>
-      <span>équipe clinet</span>
+      <p v-else>
+        {{ $t("home-text-1") }}
+        <span>{{ $t("home-text-red-1") }}</span>
+        {{ $t("home-text-2") }}
+        <span>{{ $t("home-text-red-2") }}</span>
+        {{ $t("home-text-3") }}
+        <span>{{ $t("home-text-red-3") }}</span>
+        {{ $t("home-text-4") }}
+        <span>{{ $t("home-text-red-4") }}</span>
+        {{ $t("home-text-5") }}
+        <span>{{ $t("home-text-red-5") }}</span>
+        {{ $t("home-text-6") }}
+        <span>{{ $t("home-text-red-6") }}</span>
+        {{ $t("home-text-7") }}
+      </p>
+      <span style="bottom: -30%">{{ $t("home-citation") }}</span>
     </div>
   </section>
 </template>
+
+<script>
+import { useI18n } from "vue-i18n";
+export default {
+  name: "TextSection",
+  setup() {
+    const { locale } = useI18n();
+
+    return {
+      locale,
+    };
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .textSectionRoot {
@@ -46,6 +71,10 @@
       top: -5%;
       height: 200px;
     }
+  }
+
+  @include above(large) {
+    max-width: 800px;
   }
 }
 
@@ -88,6 +117,32 @@ p {
   @include above(large) {
     line-height: 28px;
     font-size: 20px;
+    max-width: 800px;
+  }
+
+  span {
+    font-family: "SchnyderS";
+    color: #b71616;
+    position: relative;
+    bottom: inherit;
+    right: inherit;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 18px;
+    font-style: inherit;
+    text-transform: none;
+
+    @include above(big) {
+      line-height: 22px;
+      font-size: 16px;
+      max-width: 550px;
+      text-align: center;
+    }
+
+    @include above(large) {
+      line-height: 28px;
+      font-size: 20px;
+    }
   }
 }
 
@@ -113,6 +168,7 @@ span {
 
   @include above(large) {
     font-size: 90px;
+    bottom: -20%;
   }
 }
 </style>
