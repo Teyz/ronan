@@ -34,6 +34,11 @@
     top: -70%;
     z-index: 11;
 
+    @include above(small) {
+      top: -35%;
+      height: 135px;
+    }
+
     @include above(big) {
       top: -10%;
       height: 200px;

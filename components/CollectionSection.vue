@@ -188,6 +188,10 @@
     text-align: center;
     font-size: 20px;
     max-width: 320px;
+
+    @include above(small) {
+      margin: 24px auto;
+    }
     @include above(big) {
       text-align: left;
       line-height: 24px;
