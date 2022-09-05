@@ -16,12 +16,20 @@
         >
       </div>
       <ul class="nav">
-        <li><a href="#movie">Film</a></li>
-        <li @click="toggleMenu"><a href="#mantraHeader">Mantras</a></li>
+        <li @click="toggleMenu">
+          <nuxt-link :to="{ path: '/', hash: '#movie' }">Film</nuxt-link>
+        </li>
+        <li @click="toggleMenu">
+          <nuxt-link :to="{ path: '/', hash: '#mantraHeader' }"
+            >Mantras</nuxt-link
+          >
+        </li>
         <li @click="toggleMenu">
           <nuxt-link :to="{ path: '/collection' }">Collection</nuxt-link>
         </li>
-        <li @click="toggleMenu"><a href="#contact">Contact</a></li>
+        <li @click="toggleMenu">
+          <nuxt-link :to="{ path: '/', hash: '#contact' }">Contact</nuxt-link>
+        </li>
       </ul>
       <ul class="socialLinks">
         <li>

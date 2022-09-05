@@ -4,7 +4,7 @@
     <h3>contact</h3>
     <p>
       +33 (0) 5 57 25 70 00 <br />
-      contact@chateauclinet.com
+      <a href="mailto:contact@chateauclinet.com">contact@chateauclinet.com</a>
     </p>
   </div>
 </template>
