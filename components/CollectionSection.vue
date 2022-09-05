@@ -113,6 +113,10 @@
     top: 52%;
     left: 20%;
 
+    @include above(small) {
+      left: 25%;
+    }
+
     @include above(big) {
       width: 89px;
       height: 61px;
@@ -132,6 +136,9 @@
     position: absolute;
     top: 50%;
     left: 15%;
+    @include above(small) {
+      left: 25%;
+    }
     @include above(big) {
       width: 101px;
       height: 76px;

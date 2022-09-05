@@ -55,6 +55,10 @@
     transform: translateX(-50%);
     bottom: -70%;
 
+    @include above(small) {
+      bottom: -50%;
+    }
+
     @include above(big) {
       bottom: -20%;
       height: 220px;
