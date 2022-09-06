@@ -6,26 +6,27 @@
     <header :class="{ isSticky }">
       <div class="container">
         <ul class="nav">
-          <li>
+          <li v-if="route.name !== 'index'">
             <nuxt-link :to="{ path: '/', hash: '#movie' }">Film</nuxt-link>
           </li>
-          <li v-if="route.name === 'mentions-legales'">
+          <li v-else>
+            <a href="#movie">Film</a>
+          </li>
+          <li v-if="route.name !== 'index'">
             <nuxt-link :to="{ path: '/', hash: '#mantraHeader' }"
               >Mantras</nuxt-link
             >
           </li>
-          <li v-if="route.name === 'mentions-legales'">
-            <nuxt-link :to="{ path: '/', hash: '#contact' }">Contact</nuxt-link>
-          </li>
-          <li v-if="route.name !== 'mentions-legales'">
-            <nuxt-link :to="{ path: '/', hash: '#mantraHeader' }"
-              >Mantras</nuxt-link
-            >
+          <li v-if="route.name === 'index'">
+            <a href="#mantraHeader">Mantras</a>
           </li>
           <li>
             <nuxt-link :to="{ path: '/collection' }">Collection</nuxt-link>
           </li>
-          <li v-if="route.name !== 'mentions-legales'">
+          <li v-if="route.name !== 'index'">
+            <nuxt-link :to="{ path: '/', hash: '#contact' }">Contact</nuxt-link>
+          </li>
+          <li v-if="route.name === 'index'">
             <a href="#contact">Contact</a>
           </li>
         </ul>

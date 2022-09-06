@@ -16,19 +16,28 @@
         >
       </div>
       <ul class="nav">
-        <li @click="toggleMenu">
+        <li @click="toggleMenu" v-if="route.name !== 'index'">
           <nuxt-link :to="{ path: '/', hash: '#movie' }">Film</nuxt-link>
         </li>
-        <li @click="toggleMenu">
+        <li v-else @click="toggleMenu">
+          <a href="#movie">Film</a>
+        </li>
+        <li @click="toggleMenu" v-if="route.name !== 'index'">
           <nuxt-link :to="{ path: '/', hash: '#mantraHeader' }"
             >Mantras</nuxt-link
           >
         </li>
+        <li v-else @click="toggleMenu">
+          <a href="#mantraHeader">Mantras</a>
+        </li>
         <li @click="toggleMenu">
           <nuxt-link :to="{ path: '/collection' }">Collection</nuxt-link>
         </li>
-        <li @click="toggleMenu">
+        <li @click="toggleMenu" v-if="route.name !== 'index'">
           <nuxt-link :to="{ path: '/', hash: '#contact' }">Contact</nuxt-link>
+        </li>
+        <li v-else @click="toggleMenu">
+          <a href="#contact">Contact</a>
         </li>
       </ul>
       <ul class="socialLinks">
@@ -79,6 +88,7 @@ export default {
     const { locale } = useI18n();
 
     const router = useRouter();
+    const route = useRoute();
 
     const goToHome = () => {
       toggleMenu();
@@ -109,6 +119,7 @@ export default {
     return {
       showMenu,
       toggleMenu,
+      route,
       y,
       isSticky,
       changeLang,
