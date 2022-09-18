@@ -13,7 +13,9 @@
           Development: Bastien Rigaud <br />
           Text: Taylor Yandell, translated into French by Taylor Yandell <br />
           Photography: L’Œil d’Eos <br />
-          Illustrations: La Lettre M - Pauline Lenain <br /><br/>
+          Film : Jérémie Doutre <br />
+          Music : Lucas Bacle <br />
+          Illustrations: La Lettre M - Pauline Lenain <br /><br />
         </p>
         <h2>legal notice</h2>
         <p>
