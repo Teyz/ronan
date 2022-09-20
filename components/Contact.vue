@@ -3,7 +3,7 @@
     <img src="@/assets/img/montgolfiere.webp" alt="" />
     <h3>contact</h3>
     <p>
-      +33 (0) 5 57 25 70 00 <br />
+      +33 05 57 25 50 00 <br />
       <a href="mailto:contact@chateauclinet.com">contact@chateauclinet.com</a>
     </p>
   </div>
