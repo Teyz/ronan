@@ -122,6 +122,20 @@ export default {
       }
     };
 
+    onBeforeMount(() => {
+      const browserLang = (window.navigator ? (window.navigator.language || window.navigator.systemLanguage || window.navigator.userLanguage) : "ru").toLowerCase().substr(0, 2)  
+      console.log(browserLang);
+      if(browserLang === 'en'){
+        isEnglishActive.value === true;
+        isFrenchActive.value === false;
+        locale.value = browserLang;
+      } else if(browserLang === 'fr'){
+        isEnglishActive.value === false;
+        isFrenchActive.value === true;
+        locale.value = browserLang;
+      }
+    })
+
     watch(y, (newValue) => {
       if (newValue > 110) {
         isSticky.value = true;
